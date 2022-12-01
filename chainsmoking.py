@@ -24,8 +24,10 @@ def vaisseau_deplacement(x, y):
 
     return x, y
 def ball_movement(x, y):
-    x = x + 1
-    y = y + 1
+    if (x < 128):
+        x = x + 1
+    if (y < 128):
+        y = y - 1
     return x, y
 
 
