@@ -1,8 +1,16 @@
 import pyxel
+import phys
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
 pyxel.init(128, 128, title="Nuit du c0de")
+space = phys.space(gravity=(0, 25))
+ radius = 2
+ for _ in range(50):
+     x, y = uniform(0, 120), uniform(0, 80)
+     phys.circ(x, y, radius, vel=(uniform(-25, 25), uniform(-25, 25)))
+
+phys.margin(col=pyxel.COLOR_RED)
 
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
