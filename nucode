@@ -119,9 +119,6 @@ def update():
     # creation des ennemis
     ennemis_liste = ennemis_creation(ennemis_liste)
 
-    # mise a jour des positions des ennemis
-    ennemis_liste = ennemis_deplacement(ennemis_liste)
-
     # suppression des ennemis et tirs si contact
     ennemis_suppression()
 
