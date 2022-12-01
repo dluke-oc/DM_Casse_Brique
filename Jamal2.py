@@ -5,10 +5,6 @@ import phys
 # ne pas modifier
 pyxel.init(128, 128, title="Nuit du c0de")
 space = phys.space(gravity=(0, 25))
- radius = 2
- for _ in range(50):
-     x, y = uniform(0, 120), uniform(0, 80)
-     phys.circ(x, y, radius, vel=(uniform(-25, 25), uniform(-25, 25)))
 
 phys.margin(col=pyxel.COLOR_RED)
 
@@ -31,6 +27,11 @@ def vaisseau_deplacement(x, y):
 
     return x, y
 
+def ballz_movement:
+ radius = 2
+ for _ in range(50):
+     x, y = uniform(0, 120), uniform(0, 80)
+     phys.circ(x, y, radius, vel=(uniform(-25, 25), uniform(-25, 25)))
 
 
 
