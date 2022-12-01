@@ -26,7 +26,7 @@ def vaisseau_deplacement(x, y):
 def ball_movement(x, y):
     if (x < 123):
         x = x + 1
-    if (y < 5):
+    if (y > 5):
         y = y - 1
     return x, y
 
