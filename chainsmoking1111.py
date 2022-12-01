@@ -27,11 +27,11 @@ def ball_movement(x, y):
     if (x < 123):
         x = x + 1
     else:
-        x = x -1
+        x = x -7
     if (y > 5):
         y = y - 1
-    else:
-        y = y + 1
+    elif:
+        y = y + 7
     return x, y
 
 
