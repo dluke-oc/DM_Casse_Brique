@@ -66,6 +66,12 @@ def tirs_deplacement(tirs_liste):
 def ennemis_creation(ennemis_liste):
     """création aléatoire des ennemis"""
 
+    # un ennemi par seconde
+    if (pyxel.frame_count % 30 == 0):
+        ennemis_liste.append([random.randint(0, 120), 0])
+    return ennemis_liste
+
+
 def ennemis_deplacement(ennemis_liste):
     """déplacement des ennemis vers le haut et suppression s'ils sortent du cadre"""
 
