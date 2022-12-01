@@ -30,7 +30,7 @@ def ball_movement(x, y):
         x = x -7
     if (y > 5):
         y = y - 1
-    elif:
+    else:
         y = y + 7
     return x, y
 
