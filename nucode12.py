@@ -8,6 +8,8 @@ pyxel.init(128, 128, title="Nuit du c0de")
 # (origine des positions : coin haut gauche)
 vaisseau_x = 60
 vaisseau_y = 100
+ballz_x = 60
+ballz_y = 80
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -21,23 +23,15 @@ def vaisseau_deplacement(x, y):
 
     return x, y
 
-def tirs_creation(x, y, tirs_liste):
-    """création d'un tir avec la barre d'espace"""
+def ballz(ballz_liste):
+    """ deplacement des deux grosses boulles"""
+    
+    for ball in ballz_liste:
+        ball[1] -= 1
+        if ball[1]<-8:
+            ballz_liste.remove(tir)
+    return ballz_liste
 
-    # btnr pour eviter les tirs multiples
-    if pyxel.btnr(pyxel.KEY_SPACE):
-        tirs_liste.append([x+4, y-4])
-    return tirs_liste
-
-
-def tirs_deplacement(tirs_liste):
-    """déplacement des tirs vers le haut et suppression s'ils sortent du cadre"""
-
-    for tir in tirs_liste:
-        tir[1] -= 1
-        if  tir[1]<-8:
-            tirs_liste.remove(tir)
-    return tirs_liste
 
 # =========================================================
 # == UPDATE
@@ -50,13 +44,10 @@ def update():
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
-      # creation des tirs en fonction de la position du vaisseau
-    tirs_liste = tirs_creation(vaisseau_x, vaisseau_y, tirs_liste)
-
-    # mise a jour des positions des tirs
-    tirs_liste = tirs_deplacement(tirs_liste)
-
-
+    ballz_x, ballz_y = ballz(ballz_x, ballz_y)
+    
+    
+    
 # =========================================================
 # == DRAW
 # =========================================================
@@ -69,7 +60,6 @@ def draw():
     # vaisseau (carre 8x8)
     pyxel.rect(vaisseau_x, vaisseau_y, 32, 4, 8)
     
-    for tir in tirs_liste:
-        pyxel.rect(tir[0], tir[1], 1, 4, 10)
-
+    pyxel.circ(ballz_x,ballz_y, 4, 4, 1, 1)
+    
 pyxel.run(update, draw)
