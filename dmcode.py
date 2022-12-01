@@ -7,7 +7,7 @@ pyxel.init(128, 128, title="Nuit du c0de")
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
 vaisseau_x = 60
-vaisseau_y = 60
+vaisseau_y = 100
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -18,12 +18,7 @@ def vaisseau_deplacement(x, y):
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
             x = x - 1
-    if pyxel.btn(pyxel.KEY_DOWN):
-        if (y < 120) :
-            y = y + 1
-    if pyxel.btn(pyxel.KEY_UP):
-        if (y > 0) :
-            y = y - 1
+
     return x, y
 
 
