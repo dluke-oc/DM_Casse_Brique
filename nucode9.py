@@ -14,10 +14,10 @@ def vaisseau_deplacement(x, y):
 
     if pyxel.btn(pyxel.KEY_RIGHT):
         if (x < 120) :
-            x = x + 1
+            x = x + 1,25
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
-            x = x - 1
+            x = x - 1,25
 
     return x, y
 
@@ -44,6 +44,6 @@ def draw():
     pyxel.cls(0)
 
     # vaisseau (carre 8x8)
-    pyxel.rect(vaisseau_x, vaisseau_y, 32, 8, 8)
+    pyxel.rect(vaisseau_x, vaisseau_y, 32, 4, 8)
 
 pyxel.run(update, draw)
