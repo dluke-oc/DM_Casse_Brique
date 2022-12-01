@@ -22,6 +22,10 @@ ennemis_liste = []
 # initialisation des explosions
 explosions_liste = []
 
+# chargement des images
+pyxel.load("images.pyxres")
+
+
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
