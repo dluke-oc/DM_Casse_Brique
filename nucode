@@ -8,10 +8,10 @@ pyxel.init(128, 128, title="Nuit du c0de")
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
 vaisseau_x = 60
-vaisseau_y = 100
+vaisseau_y = 60
 
 # vies
-vies = 3
+vies = 4
 
 # initialisation des tirs
 tirs_liste = []
@@ -35,6 +35,14 @@ def vaisseau_deplacement(x, y):
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
             x = x - 1
+    if pyxel.btn(pyxel.KEY_DOWN):
+        if (y < 120) :
+            y = y + 1
+    if pyxel.btn(pyxel.KEY_UP):
+        if (y > 0) :
+            y = y - 1
+    return x, y
+
 
 def tirs_creation(x, y, tirs_liste):
     """création d'un tir avec la barre d'espace"""
@@ -62,6 +70,17 @@ def ennemis_creation(ennemis_liste):
     if (pyxel.frame_count % 30 == 0):
         ennemis_liste.append([random.randint(0, 120), 0])
     return ennemis_liste
+
+
+def ennemis_deplacement(ennemis_liste):
+    """déplacement des ennemis vers le haut et suppression s'ils sortent du cadre"""
+
+    for ennemi in ennemis_liste:
+        ennemi[1] += 1
+        if  ennemi[1]>128:
+            ennemis_liste.remove(ennemi)
+    return ennemis_liste
+
 
 def vaisseau_suppression(vies):
     """disparition du vaisseau et d'un ennemi si contact"""
@@ -119,6 +138,9 @@ def update():
     # creation des ennemis
     ennemis_liste = ennemis_creation(ennemis_liste)
 
+    # mise a jour des positions des ennemis
+    ennemis_liste = ennemis_deplacement(ennemis_liste)
+
     # suppression des ennemis et tirs si contact
     ennemis_suppression()
 
@@ -144,7 +166,7 @@ def draw():
         pyxel.text(5,5, 'VIES:'+ str(vies), 7)
 
         # vaisseau (carre 8x8)
-        pyxel.blt(vaisseau_x, vaisseau_y, 0, 0, 0, 8, 32)
+        pyxel.blt(vaisseau_x, vaisseau_y, 0, 0, 0, 8, 8)
 
         # tirs
         for tir in tirs_liste:
