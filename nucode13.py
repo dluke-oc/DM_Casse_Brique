@@ -23,14 +23,7 @@ def vaisseau_deplacement(x, y):
 
     return x, y
 
-def ballz(ballz_liste):
-    """ deplacement des deux grosses boulles"""
-    
-    for ball in ballz_liste:
-        ball[1] -= 1
-        if ball[1]<-8:
-            ballz_liste.remove(tir)
-    return ballz_liste
+
 
 
 # =========================================================
@@ -43,9 +36,7 @@ def update():
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
-    
-    ballz_x, ballz_y = ballz(ballz_x, ballz_y)
-    
+       
     
     
 # =========================================================
