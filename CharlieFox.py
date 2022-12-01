@@ -1,5 +1,5 @@
 import pyxel
-import phys
+
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
