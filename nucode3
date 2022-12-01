@@ -166,7 +166,7 @@ def draw():
         pyxel.text(5,5, 'VIES:'+ str(vies), 7)
 
         # vaisseau (carre 8x8)
-        pyxel.blt(vaisseau_x, vaisseau_y, 0, 0, 0, 8, 32)
+        pyxel.blt(vaisseau_x, vaisseau_y, 0, 0, 0, 8, 8)
 
         # tirs
         for tir in tirs_liste:
