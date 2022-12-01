@@ -27,7 +27,7 @@ def vaisseau_deplacement(x, y):
 
     return x, y
 
-def ballz_movement:
+def ballz_movement(x, y):
  radius = 2
  for _ in range(50):
      x, y = uniform(0, 120), uniform(0, 80)
@@ -45,6 +45,8 @@ def update():
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
+    
+    ballz_x, ballz_y = ballz_movement(ballz_x, ballz_y)
        
     
     
