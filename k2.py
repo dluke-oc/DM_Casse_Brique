@@ -37,6 +37,11 @@ def ball_movement(x, y):
     elif (y > 5) or (y < 123):
         xball_speed = xball_speed
         yball_speed = -yball_speed
+    else:
+        xball_speed = xball_speed
+        yball_speed = yball_speed
+   
+     
    
     return x, y
 
