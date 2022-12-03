@@ -62,7 +62,7 @@ def update():
     ball_x, ball_y = ball_movement(ball_x, ball_y)
     
     if vaisseau_y <= ball_y <= vaisseau_y + 18 and vaisseau_x <= balle_x <= vaisseau_x + 32:
-        xball_speed = xball_speed
+        xball_speed = -xball_speed
         yball_speed = -yball_speed 
     
 # =========================================================
