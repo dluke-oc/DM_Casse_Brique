@@ -13,18 +13,18 @@ ball_x = 60
 ball_y = 80
 
 
-xball_speed = 1
-yball_speed = 1
+xball_speed = 5
+yball_speed = 5
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
     if pyxel.btn(pyxel.KEY_RIGHT):
         if (x < 120) :
-            x = x + 1
+            x = x + 2
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
-            x = x - 1
+            x = x - 2
     return x, y
 
 def ball_movement(x, y):
