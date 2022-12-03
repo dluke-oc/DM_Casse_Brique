@@ -28,7 +28,7 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def ball_movement(x, y):
-    global xball_speed, yball_speed, vaisseau_x, vaisseau_y
+    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y
     x -= xball_speed
     y -= yball_speed
     if (x < 5) or (x > 246):
@@ -40,7 +40,9 @@ def ball_movement(x, y):
     else:
         xball_speed = xball_speed
         yball_speed = yball_speed
- 
+    if vaisseau_y = ball_y and vaisseau_x <= ball_x <= vaisseau_x + 32:
+        xball_speed = -xball_speed
+        yball_speed = -yball_speed
     return x, y
 
  
