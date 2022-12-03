@@ -11,6 +11,8 @@ vaisseau_x = 60
 vaisseau_y = 100
 ball_x = 60
 ball_y = 80
+dx = 1
+dy = 1
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
