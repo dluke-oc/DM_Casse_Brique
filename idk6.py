@@ -24,16 +24,7 @@ def vaisseau_deplacement(x, y):
             x = x - 1
 
     return x, y
-def ball_movement(x, y, dx, dy):
-    dx = 2
-    dy = 2
-    x = x + dx
-    y = y + dy
-    if (y < 5) or (y > 123):
-        dy *= -1
-    if (x < 5):
-        dx *= -1
-    return x, y, dx ,dy
+
 
 
 # =========================================================
@@ -62,6 +53,9 @@ def draw():
 
     # vaisseau (carre 8x8)
     pyxel.rect(vaisseau_x, vaisseau_y, 32, 4, 8)
+    pyxel.tri(vaisseau_x, vaisseau_y, vaisseau_x, vaisseau_y+8, vaisseau_x-8, vaisseau_y+8, 12)
+    pyxel.tri(vaisseau_x+12, vaisseau_y, vaisseau_x+12, vaisseau_y+8, vaisseau_x+30, vaisseau_y+8, 12)
+    pyxel.rect(vaisseau_x-8, vaisseau_y+8, 40, 4, 8)
     
     pyxel.circ(ball_x,ball_y, 5, 4)
     
