@@ -20,7 +20,7 @@ def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
     if pyxel.btn(pyxel.KEY_RIGHT):
-        if (x < 205) :
+        if (x < 202) :
             x = x + 4
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 20) :
