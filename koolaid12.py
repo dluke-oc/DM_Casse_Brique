@@ -62,4 +62,6 @@ def draw():
     
     pyxel.circ(ball_x,ball_y, 5, 4)
     
+    pyxel.rect(24, 24, 15, 10)
+    
 pyxel.run(update, draw)
