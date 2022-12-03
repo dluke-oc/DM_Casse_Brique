@@ -62,7 +62,7 @@ def draw():
     
     pyxel.circ(ball_x,ball_y, 5, 4)
     
-    for i in range(0, 2):
+    for i in range(0, 3):
         pyxel.rectb(19, 24+(i*5), 15, 5, 10+i)
         pyxel.rectb(34, 24+(i*5), 15, 5, 10+i)
         pyxel.rectb(49, 24+(i*5), 15, 5, 10+i)
