@@ -63,11 +63,11 @@ def draw():
     pyxel.circ(ball_x,ball_y, 5, 4)
     
     for i in range(0, 2):
-        pyxel.rectb(19, 24, 15, 5+(i*5), 12+i)
-        pyxel.rectb(34, 24, 15, 5+(i*5), 12+i)
-        pyxel.rectb(49, 24, 15, 5+(i*5), 12+i)
-        pyxel.rectb(64, 24, 15, 5+(i*5), 12+i)
-        pyxel.rectb(79, 24, 15, 5+(i*5), 12+i)
-        pyxel.rectb(94, 24, 15, 5+(i*5), 12+i)
+        pyxel.rectb(19, 24+(i*5), 15, 5, 10+i)
+        pyxel.rectb(34, 24+(i*5), 15, 5, 10+i)
+        pyxel.rectb(49, 24+(i*5), 15, 5, 10+i)
+        pyxel.rectb(64, 24+(i*5), 15, 5, 10+i)
+        pyxel.rectb(79, 24+(i*5), 15, 5, 10+i)
+        pyxel.rectb(94, 24+(i*5), 15, 5, 10+i)
     
 pyxel.run(update, draw)
