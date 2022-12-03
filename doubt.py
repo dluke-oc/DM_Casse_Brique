@@ -27,10 +27,31 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def ball_movement(x, y, dx, dy, v):
+
     x = dx + v
     y = dy + v
     
     return x, y, dx, dy, v
+
+def ball_specifics(dx, dy):
+    if (x > 5):
+        bouncer = True
+    else:
+        bouncer = False
+    if bouncer == True:
+        dx = -dx
+    else:
+        dx = abs(dx)
+    if (y > 5) or (y < 123):
+        bounce = True
+    else:
+        bounce = False
+    if bounce == True:
+        dy = -dy
+    else:
+        dy = abs(dy)
+     
+      
 
 
 
@@ -40,7 +61,7 @@ def ball_movement(x, y, dx, dy, v):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, dx, dy ,v ,bounce
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
