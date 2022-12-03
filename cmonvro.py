@@ -40,12 +40,7 @@ def ball_movement(x, y):
     else:
         xball_speed = xball_speed
         yball_speed = yball_speed
-    if (vaisseau_x, vaisseau_y) > (x, y) > (vaisseau_x, vaisseau_y - 2):
-        xball_speed = xball_speed
-        yball_speed = -yball_speed        
-   
-     
-   
+ 
     return x, y
 
  
@@ -65,6 +60,10 @@ def update():
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
     ball_x, ball_y = ball_movement(ball_x, ball_y)
+    
+    if vaisseau_y <= ball_y <= vaisseau_y + 18 and vaisseau_x <= balle_x <= vaisseau_x + 32:
+        xball_speed = xball_speed
+        yball_speed = -yball_speed 
     
 # =========================================================
 # == DRAW
