@@ -39,7 +39,10 @@ def ball_movement(x, y):
         yball_speed = -yball_speed
     elif (y >= 219):
         if  219 <= y <= (240):
-            if (vaisseau_x -15) <= x <= (vaisseau_x + 63):
+            if (vaisseau_x -15) <= x < (vaisseau_x):
+                xball_speed = -xball_speed
+                yball_speed = -yball_speed
+            elif vaisseau_x <= x <= (vaisseau_x +63):
                 xball_speed = xball_speed
                 yball_speed = -yball_speed
     else:
