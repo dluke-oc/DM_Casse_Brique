@@ -30,14 +30,14 @@ def vaisseau_deplacement(x, y):
             x = x - 1
 
     return x, y
-def ball_movement(x, y, dx, dy):
-    x = dx
-    y = dy
+def ball_movement(x, y):
+    x = dx + 1
+    y = dy + 1
     if (y < bbtom) or (y > btop):
-        dy *= -1
+        dy *= -1,5
     if (x < bleft) or (x > bright):
-        dx *= -1
-    return x, y, dx ,dy
+        dx *= -1,5
+    return x, y
 
 
 
