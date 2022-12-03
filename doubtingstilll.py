@@ -33,7 +33,7 @@ def ball_movement(x, y, dx, dy, v):
     
     return x, y, dx, dy, v
 
-def ball_specifics(dx, dy):
+def ball_specifics(x, y, dx, dy):
     if (x > 5):
         bouncer = True
     else:
@@ -50,7 +50,7 @@ def ball_specifics(dx, dy):
         dy = -dy
     else:
         dy = abs(dy)
-    return dx, dy
+    return x, y, dx, dy
      
       
 
