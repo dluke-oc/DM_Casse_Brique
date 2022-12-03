@@ -47,7 +47,7 @@ def ball_movement(x, y, dx, dy):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, dx, dy, btop, bbtom, bleft, bright
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
