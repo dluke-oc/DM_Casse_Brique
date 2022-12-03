@@ -3,7 +3,7 @@ import pyxel
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
-pyxel.init(128, 128, title="Nuit du c0de")
+pyxel.init(256, 256, title="Nuit du c0de")
 
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
@@ -12,21 +12,41 @@ vaisseau_y = 100
 ball_x = 60
 ball_y = 80
 
+
+xball_speed = 5
+yball_speed = 5
+
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
     if pyxel.btn(pyxel.KEY_RIGHT):
         if (x < 120) :
-            x = x + 1
+            x = x + 2
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
-            x = x - 1
+            x = x - 2
     return x, y
 
 def ball_movement(x, y):
-    x = x + 1
-    y = y + 1
+    global xball_speed, yball_speed
+    x -= xball_speed
+    y -= yball_speed
+    if (x < 5):
+        xball_speed = -xball_speed
+        yball_speed = yball_speed
+    elif (y < 5) or (y > 246):
+        xball_speed = xball_speed
+        yball_speed = -yball_speed
+    else:
+        xball_speed = xball_speed
+        yball_speed = yball_speed
+   
+     
+   
     return x, y
+
+ 
+      
 
 
 
@@ -42,8 +62,6 @@ def update():
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
     ball_x, ball_y = ball_movement(ball_x, ball_y)
-       
-    
     
 # =========================================================
 # == DRAW
