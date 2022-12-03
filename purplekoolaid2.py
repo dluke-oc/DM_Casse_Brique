@@ -23,16 +23,10 @@ def vaisseau_deplacement(x, y):
             x = x - 1
     return x, y
 
-'''
-def ball_movement(x, y, dx, dy):
-    x = dx + 1
-    y = dy + 1
-    if (y < bbtom) or (y > btop):
-        dy *= -1
-    if (x < bleft) or (x > bright):
-        dx *= -1
-    return x, y, dx, dy
- '''
+def ball_movement(x, y):
+    x = x + 1
+    y = y + 1
+
 
 
 
