@@ -50,6 +50,7 @@ def ball_specifics(dx, dy):
         dy = -dy
     else:
         dy = abs(dy)
+    return dx, dy
      
       
 
