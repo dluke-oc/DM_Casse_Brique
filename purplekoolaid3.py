@@ -26,7 +26,7 @@ def vaisseau_deplacement(x, y):
 def ball_movement(x, y):
     x = x + 1
     y = y + 1
-
+    return x, y
 
 
 
