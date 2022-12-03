@@ -28,16 +28,16 @@ def vaisseau_deplacement(x, y):
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
             x = x - 1
-
     return x, y
-def ball_movement(x, y):
+
+def ball_movement(x, y, dx, dy):
     x = dx + 1
     y = dy + 1
     if (y < bbtom) or (y > btop):
-        dy *= -1,5
+        dy *= -1
     if (x < bleft) or (x > bright):
-        dx *= -1,5
-    return x, y
+        dx *= -1
+    return x, y, dx, dy
 
 
 
