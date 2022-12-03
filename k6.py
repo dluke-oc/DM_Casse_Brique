@@ -3,7 +3,7 @@ import pyxel
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
-pyxel.init(400, 300, title="Nuit du c0de")
+pyxel.init(128, 128 title="Nuit du c0de")
 
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
@@ -31,7 +31,7 @@ def ball_movement(x, y):
     global xball_speed, yball_speed
     x -= xball_speed
     y -= yball_speed
-    if (x < 5):
+    if (x < 5) or (x < 123):
         xball_speed = -xball_speed
         yball_speed = yball_speed
     elif (y < 5) or (y > 123):
