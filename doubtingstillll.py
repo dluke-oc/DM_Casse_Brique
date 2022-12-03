@@ -68,7 +68,7 @@ def update():
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
     ball_x, ball_y = ball_movement(ball_x, ball_y)
-       
+    ball_x, ball_y = ball_specifics(ball_x, ball_y)       
     
     
 # =========================================================
