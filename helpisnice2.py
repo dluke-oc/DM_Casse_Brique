@@ -31,7 +31,7 @@ def ball_movement(x, y):
     global xball_speed, yball_speed
     x -= xball_speed
     y -= yball_speed
-    if (x < 5) or (x < 208):
+    if (x < 5) or (x > 208):
         xball_speed = -xball_speed
         yball_speed = yball_speed
     elif (y < 5) or (y > 246):
