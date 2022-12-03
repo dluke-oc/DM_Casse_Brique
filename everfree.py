@@ -16,6 +16,7 @@ ball_y = 80
 dx = 1
 dy = 1
 v = 1
+game = True 
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -29,31 +30,22 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def ball_movement(x, y, dx, dy, v):
-
-    x = dx + v
-    y = dy + v
+    if game == True:
+        x = dx + v
+        y = dy + v
     
-    return x, y, dx, dy, v
-
-def ball_specifics(x, y, dx, dy):
     if (x > 5):
-        bouncer = True
-    else:
-        bouncer = False
-    if bouncer == True:
         dx = -dx
     else:
         dx = abs(dx)
+        
     if (y > 5) or (y < 123):
-        bounce = True
-    else:
-        bounce = False
-    if bounce == True:
         dy = -dy
     else:
         dy = abs(dy)
-    return x, y, dx, dy
-     
+    return x, y, dx, dy, v
+
+ 
       
 
 
