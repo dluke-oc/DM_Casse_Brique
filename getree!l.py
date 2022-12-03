@@ -26,7 +26,7 @@ def vaisseau_deplacement(x, y):
 def ball_movement(x, y, dx, dy):
     if (y > 5) or (y < 123):
         bounce = True
-    if bounce = True:
+    if bounce == True:
         dy = -dy
     v = 1
     x = dx + v
