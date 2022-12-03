@@ -11,6 +11,12 @@ vaisseau_x = 60
 vaisseau_y = 100
 ball_x = 60
 ball_y = 80
+dx = 2
+dy = 2
+btop = 123
+bbtom = 5
+bleft = 5
+bright = 123
 
 
 def vaisseau_deplacement(x, y):
@@ -24,6 +30,14 @@ def vaisseau_deplacement(x, y):
             x = x - 1
 
     return x, y
+def ball_movement(x, y, dx, dy):
+    x = dx
+    y = dy
+    if (y < bbtom) or (y > btop):
+        dy *= -1
+    if (x < bleft) or (x > bright):
+        dx *= -1
+    return x, y, dx ,dy
 
 
 
@@ -53,9 +67,6 @@ def draw():
 
     # vaisseau (carre 8x8)
     pyxel.rect(vaisseau_x, vaisseau_y, 32, 4, 8)
-    pyxel.tri(vaisseau_x, vaisseau_y, vaisseau_x, vaisseau_y+8, vaisseau_x-8, vaisseau_y+8, 12)
-    pyxel.tri(vaisseau_x+12, vaisseau_y, vaisseau_x+12, vaisseau_y+8, vaisseau_x+30, vaisseau_y+8, 12)
-    pyxel.rect(vaisseau_x-8, vaisseau_y+8, 40, 4, 8)
     
     pyxel.circ(ball_x,ball_y, 5, 4)
     
