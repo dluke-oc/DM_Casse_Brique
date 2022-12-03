@@ -29,7 +29,8 @@ def vaisseau_deplacement(x, y):
             x = x - 1
     return x, y
 
-def ball_movement(x, y, dx, dy, v):
+def ball_movement(x, y):
+    global dx, dy, v
     if game == True:
         x = dx + v
         y = dy + v
