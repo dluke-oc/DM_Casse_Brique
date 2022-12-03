@@ -62,7 +62,7 @@ def ball_specifics(dx, dy):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, dx, dy ,v ,bounce
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, dx, dy ,v ,bounce, bouncer
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
