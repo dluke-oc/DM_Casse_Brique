@@ -13,10 +13,8 @@ vaisseau_x = 60
 vaisseau_y = 100
 ball_x = 60
 ball_y = 80
-dx = 1
-dy = 1
-v = 1
-game = True 
+xball_speed = 1
+yball_speed = 1
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -30,21 +28,17 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def ball_movement(x, y):
-    global dx, dy, v
-    if game == True:
-        x = dx + v
-        y = dy + v
-    
+    global xball_speed, yball_speed
+    x -= xball_speed
+    y -= yball_speed
     if (x > 5):
-        dx = -dx
-    else:
-        dx = abs(dx)
-        
-    if (y > 5) or (y < 123):
-        dy = -dy
-    else:
-        dy = abs(dy)
-    return x, y, dx, dy, v
+        xball_speed = -xball_speed
+        yball_speed = yball_speed
+    elif (y > 5) or (y < 123):
+        xball_speed = xball_speed
+        yball_speed = yball_speed
+   
+    return x, y
 
  
       
@@ -57,7 +51,7 @@ def ball_movement(x, y):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, dx, dy ,v ,bounce, bouncer
+    global vaisseau_x, vaisseau_y, ball_x, ball_y
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
