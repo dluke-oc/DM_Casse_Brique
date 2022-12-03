@@ -1,6 +1,4 @@
 import pyxel
-import math
-
 
 
 # taille de la fenetre 128x128 pixels
@@ -13,6 +11,8 @@ vaisseau_x = 60
 vaisseau_y = 100
 ball_x = 60
 ball_y = 80
+
+
 xball_speed = 1
 yball_speed = 1
 
@@ -36,7 +36,7 @@ def ball_movement(x, y):
         yball_speed = yball_speed
     elif (y > 5) or (y < 123):
         xball_speed = xball_speed
-        yball_speed = yball_speed
+        yball_speed = -yball_speed
    
     return x, y
 
@@ -57,8 +57,6 @@ def update():
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
     ball_x, ball_y = ball_movement(ball_x, ball_y)
-    ball_x, ball_y = ball_specifics(ball_x, ball_y)       
-    
     
 # =========================================================
 # == DRAW
