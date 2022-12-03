@@ -13,6 +13,7 @@ ball_x = 60
 ball_y = 80
 dx = 1
 dy = 1
+v = 1
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -25,16 +26,15 @@ def vaisseau_deplacement(x, y):
             x = x - 1
     return x, y
 
-def ball_movement(x, y, dx, dy):
+def ball_movement(x, y, dx, dy, v):
     if (y > 5) or (y < 123):
         bounce = True
     if bounce == True:
         dy = -dy
-    v = 1
     x = dx + v
     y = dy + v
     
-    return x, y, dx, dy
+    return x, y, dx, dy, v
 
 
 
