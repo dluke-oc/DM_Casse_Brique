@@ -31,10 +31,10 @@ def ball_movement(x, y):
     global xball_speed, yball_speed
     x -= xball_speed
     y -= yball_speed
-    if (x > 5):
+    if (x < 5):
         xball_speed = -xball_speed
         yball_speed = yball_speed
-    elif (y > 5) or (y < 123):
+    elif (y < 5) or (y > 123):
         xball_speed = xball_speed
         yball_speed = -yball_speed
     else:
