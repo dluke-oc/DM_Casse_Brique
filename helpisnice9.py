@@ -40,7 +40,7 @@ def ball_movement(x, y):
     else:
         xball_speed = xball_speed
         yball_speed = yball_speed
-    if (vaisseau_x, vaisseau_y) = (x, y) < (vaisseau_x + 63, vaisseau_y):
+    if (vaisseau_x, vaisseau_y) == (x, y) < (vaisseau_x + 63, vaisseau_y):
         xball_speed = xball_speed
         yball_speed = -yball_speed        
    
