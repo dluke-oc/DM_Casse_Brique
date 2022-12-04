@@ -66,7 +66,11 @@ def ball_movement(x, y):
     #if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
      #   xball_speed = xball_speed
       #  yball_speed = -yball_speed
-    
+    if brick_y[0] <= ball_y <= (brick_y[11]+14):
+        for l in range (12):
+            if brick_x[l -1] <= x <= (brick_x[l-1]+30):
+                xball_speed = xball_speed 
+                yball_speed = -yball_speed    
     else:
         xball_speed = xball_speed
         yball_speed = yball_speed
