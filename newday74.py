@@ -84,7 +84,7 @@ def ball_movement(x, y):
         xball_speed = xball_speed
         yball_speed = yball_speed
     
-    return x, y, xball_speed, yball_speed
+    return x, y
 #def brickbreaker():
  #   global xball_speed, yball_speed, brick_x, brick_y, ball_y
     
