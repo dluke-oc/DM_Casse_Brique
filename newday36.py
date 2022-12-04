@@ -84,6 +84,8 @@ def brique_destruction():
             brick_y.pop(i)
             xball_speed = xball_speed
             yball_speed = -yball_speed
+    return xball_speed, yball_speed, brick_x, brick_y
+            
  
       
 
