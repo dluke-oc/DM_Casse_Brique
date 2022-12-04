@@ -75,13 +75,11 @@ def ball_movement(x, y):
     return x, y
 def brickbreaker():
     global xball_speed, yball_speed, brick_x, brick_y, ball_y
-    if brick_y[0] <= ball_y <= brick_y[17]:
-        for l in range (17):
-            if brick_x[l -1] <= x <= brick_x[l]:
+    if brick_y[0] <= ball_y <= (brick_y[17]+14):
+        for l in range (18):
+            if brick_x[l -1] <= x <= (brick_x[l-1]+30):
                 xball_speed = xball_speed 
                 yball_speed = -yball_speed
-                brick_x.pop(l-1)
-                brick_y.pop(l-1)
     return brick_x, brick_y, xball_speed, yball_speed
 
 
