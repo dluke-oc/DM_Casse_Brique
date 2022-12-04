@@ -74,13 +74,15 @@ def ball_movement(x, y):
     
     return x, y
 def brickbreaker():
-    if 62 <= y <= 90:
+    global xball_speed, yball_speed, brick_x, brick_y, ball_y
+    if 62 <= ball_y <= 90:
         for l in range (5):
             if brick_x[l -1] <= x <= brick_x[l]:
                 xball_speed = xball_speed 
                 yball_speed = -yball_speed
                 brick_x.pop(l-1)
                 brick_y.pop(l-1)
+    return brick_x, brick_y, xball_speed, yball_speed
 
 
  
@@ -104,7 +106,7 @@ def update():
         game = True
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
-
+        brickbreaker()
     
     
 # =========================================================
