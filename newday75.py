@@ -56,18 +56,7 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed #*1.015
             yball_speed = -yball_speed#*1.015
-    if (x == exright or x == exleft) and textop <= y and y <= texbtom: #rebond contre brique droite
-        xball_speed = -xball_speed
-        yball_speed = yball_speed 
-    if (x == exright or x == exleft) and bextop <= y  and y <= bexbtom: #rebond contre brique droite
-        xball_speed = -xball_speed
-        yball_speed = yball_speed   
-    if exleft <= x and x <= exright and (y == textop or y == texbtom): #rebond contre brique gauche
-        xball_speed = xball_speed
-        yball_Speed = -yball_speed
-    if exleft <= x and x <= exright and (y == bextop or y == bexbtom): #rebond contre brique gauche
-        xball_speed = xball_speed
-        yball_Speed = -yball_speed  
+      
       
     #if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
      #   xball_speed = xball_speed
@@ -89,6 +78,20 @@ def ball_movement(x, y):
  #   global xball_speed, yball_speed, brick_x, brick_y, ball_y
     
   #  return brick_x, brick_y, xball_speed, yball_speed
+def ballxbrick(x, y, xball_speed, yball_speed):
+    if (x == exright or x == exleft) and textop <= y and y <= texbtom: #rebond contre brique droite
+            xball_speed = -xball_speed
+            yball_speed = yball_speed 
+        if (x == exright or x == exleft) and bextop <= y  and y <= bexbtom: #rebond contre brique droite
+            xball_speed = -xball_speed
+            yball_speed = yball_speed   
+        if exleft <= x and x <= exright and (y == textop or y == texbtom): #rebond contre brique gauche
+            xball_speed = xball_speed
+            yball_Speed = -yball_speed
+        if exleft <= x and x <= exright and (y == bextop or y == bexbtom): #rebond contre brique gauche
+            xball_speed = xball_speed
+            yball_Speed = -yball_speed
+    return x, y, xball_speed, yball_speed
 
 
 # =========================================================
@@ -102,6 +105,7 @@ def update():
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     ball_x, ball_y = ball_movement(ball_x, ball_y)
+    ball_x, ball_y, xball_speed, yball_speed = ballxbrick(ball_x, ball_y, xball_speed, yball_speed)
    
     #if pyxel.btnr(pyxel.KEY_SPACE):
        # game = True
