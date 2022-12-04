@@ -12,6 +12,7 @@ vaisseau_x = 128
 vaisseau_y = 220
 ball_x = 128
 ball_y = 210
+score = 0
 
 
 xball_speed = 3
@@ -78,19 +79,21 @@ def ball_movement(x, y):
     return x, y
 
 def ballxbrick(ball_x, ball_y):
-    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2
+    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score
     for h in range(0, len(brick_x)):
         if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and textop <= ball_y <= texbtom: #rebond contre brique nivsup
             brick_x.pop(h - 1)
             brick_y.pop(h - 1)
             xball_speed = xball_speed
             yball_speed = -yball_speed  
+            score = score + 10
             break
         if (ball_x == brick_x[h - 1] or ball_x == (brick_x[h -1] + 30))and textop <= ball_y <= texbtom:
             brick_x.pop(h - 1)
             brick_y.pop(h - 1)
             xball_speed = xball_speed
             yball_speed = -yball_speed  
+            score = score + 10
             break
     for i in range(0, len(brick_x2)):
         if brick_x2[i-1] <= ball_x and ball_x <= (brick_x2[i-1] + 30) and bextop <= ball_y <= bexbtom: #rebond contre brique  nivinf
@@ -98,6 +101,7 @@ def ballxbrick(ball_x, ball_y):
             brick_y2.pop(i - 1)
             ball_speed = xball_speed
             yball_speed = -yball_speed
+            score = score + 15
             break
      
            
@@ -111,7 +115,7 @@ def ballxbrick(ball_x, ball_y):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed, score
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     ball_x, ball_y = ball_movement(ball_x, ball_y)
@@ -141,7 +145,7 @@ def draw():
     pyxel.rect(vaisseau_x-15, vaisseau_y+15, 63, 4, 8)
     """
 
-    
+    pyxel.text(20, 20, "score : %s " % str(score), 7)    
     pyxel.circ(ball_x,ball_y, 5, 4)
     for i in range(0, 6):
         b = brick_x[i - 1]
