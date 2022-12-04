@@ -81,9 +81,12 @@ def ball_movement(x, y):
 def brick_destruction():
     global brick_x, brick_y, yball_speed, xball_speed
     for i in range(0, 19):
-        if brick_x[i-1]<= x <= brick_x[i] and y == brick_y[i-1]:
+        if brick_x[i-1]<= x <= brick_x[i] and y == brick_y[0]:
             brick_x.pop(i)
             brick_y.pop(i)
+            xball_speed = xball_speed
+            yball_speed = -yball_speed
+        if brick_x[i-1] <= x <= brick_x[i] and y == brick_y[17]:
             xball_speed = xball_speed
             yball_speed = -yball_speed
     return xball_speed, yball_speed, brick_x, brick_y
@@ -134,7 +137,7 @@ def draw():
     for i in range(0, 19):
         b = brick_x[i - 1]
         c = brick_y[i - 1]
-        pyxel.rect(b, c, 30, 14, 10)
+        pyxel.rectb(b, c, 30, 14, 10)
     
     #for by in range(4):
         #for i in range(0, 7):
