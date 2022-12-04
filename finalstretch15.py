@@ -79,8 +79,8 @@ def ball_movement(x, y):
     
     return x, y
 
-def ballxbrick(ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2):
-    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, score
+def ballxbrick(ball_x, ball_y):
+    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score
     for h in range(0, len(brick_x)):
         if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and textop <= ball_y <= texbtom: #rebond contre brique nivsup
             brick_x.pop(h - 1)
@@ -99,7 +99,8 @@ def ballxbrick(ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2):
             break
      
            
-    return ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2
+    return ball_x, ball_y
+
 def life(game, vie):
     global ball_y
     if ball_y > 250:
@@ -126,7 +127,7 @@ def update():
         game= True
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
-        ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2 = ballxbrick(ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2)
+        ball_x, ball_y = ballxbrick(ball_x, ball_y)
     
    
     #if game == False:
