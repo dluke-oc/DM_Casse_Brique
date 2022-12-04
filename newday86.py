@@ -20,7 +20,7 @@ brick_x = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188]
 brick_y = [62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90]
 exleft = 38
 exright = 218
-textop = 58
+textop =62
 texbtom = 76
 bextop = 90
 bexbtom = 118
@@ -37,7 +37,7 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def ball_movement(x, y):
-    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, exleft, exright, textop, texbtom, bextop, bexbtom
+    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y
     x -= xball_speed
     y -= yball_speed
     if (x < 5) or (x > 246):
@@ -78,21 +78,21 @@ def ball_movement(x, y):
  #   global xball_speed, yball_speed, brick_x, brick_y, ball_y
     
   #  return brick_x, brick_y, xball_speed, yball_speed
-def ballxbrick(x, y, xball_speed, yball_speed):
+def ballxbrick(ball_x, ball_y, xball_speed, yball_speed):
     global exright, exleft, textop, texbtom, bextop, bexbtom
-    if (x == exright or x == exleft) and textop <= y and y <= texbtom: #rebond contre brique droite
+    if (ball_x == exright or ball_x == exleft) and textop <= ball_y and ball_y <= texbtom: #rebond contre brique droite
         xball_speed = -xball_speed
         yball_speed = yball_speed 
-    if (x == exright or x == exleft) and bextop <= y  and y <= bexbtom: #rebond contre brique droite
+    if (ball_x == exright or ball_x == exleft) and bextop <= ball_y  and ball_y <= bexbtom: #rebond contre brique droite
         xball_speed = -xball_speed
         yball_speed = yball_speed   
-    if exleft < x and x < exright and y == textop: #rebond contre brique gauche
+    if exleft < ball_x and ball_x < exright and ball_y == textop: #rebond contre brique gauche
         xball_speed = xball_speed
         yball_speed = -yball_speed
-    if exleft < x and x < exright and y == bextop: #rebond contre brique haut nivinf
+    if exleft < ball_x and ball_x < exright and ball_y == bextop: #rebond contre brique haut nivinf
         xball_speed = xball_speed
         yball_speed = -yball_speed
-    return x, y, xball_speed, yball_speed
+    return ball_x, ball_y, xball_speed, yball_speed
 
 
 # =========================================================
