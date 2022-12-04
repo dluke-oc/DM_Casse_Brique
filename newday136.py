@@ -4,7 +4,7 @@ import pyxel
 # taille de la fenetre 256x256 pixels
 # ne pas modifier
 pyxel.init(256, 256, title="Nuit du c0de")
-game = False
+#game = False
 
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
@@ -79,20 +79,18 @@ def ball_movement(x, y):
 
 def ballxbrick(ball_x, ball_y):
     global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, game
-    for h in range(len(brick_x)):
+    for h in range(0, len(brick_x)):
         if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and textop <= ball_y <= texbtom: #rebond contre brique gauche
             brick_x.pop(h - 1)
             brick_y.pop(h - 1)
             xball_speed = xball_speed
             yball_speed = -yball_speed   
-            break
-    for i in range(len(brick_x2)):
+    for i in range(0, len(brick_x2)):
         if brick_x2[i-1] <= ball_x and ball_x <= (brick_x2[i-1] + 30) and bextop <= ball_y <= bexbtom: #rebond contre brique haut nivinf
             brick_x2.pop(i - 1)
             brick_y2.pop(i - 1)
             ball_speed = xball_speed
             yball_speed = -yball_speed
-            break
            
     return ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2
 
