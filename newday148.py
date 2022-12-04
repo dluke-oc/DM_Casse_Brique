@@ -13,6 +13,7 @@ vaisseau_y = 220
 ball_x = 128
 ball_y = 210
 score = 0
+vie = 3
 
 
 xball_speed = 3
@@ -115,7 +116,7 @@ def ballxbrick(ball_x, ball_y):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed, score
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed, score, vie
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     ball_x, ball_y = ball_movement(ball_x, ball_y)
@@ -145,7 +146,8 @@ def draw():
     pyxel.rect(vaisseau_x-15, vaisseau_y+15, 63, 4, 8)
     """
 
-    pyxel.text(20, 20, "score : %s " % str(score), 7)    
+    pyxel.text(20, 20, "score : %s " % str(score), 7)  
+    pyxel.text(200, 225, "vie : %s " % str(vie), 7)
     pyxel.circ(ball_x,ball_y, 5, 4)
     for i in range(0, 6):
         b = brick_x[i - 1]
