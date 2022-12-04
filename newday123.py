@@ -39,7 +39,7 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def ball_movement(x, y):
-    global xball_speed, yball_speed, vaisseau_x, vaisseau_y
+    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y
     x -= xball_speed
     y -= yball_speed
     if (x < 5) or (x > 246):
@@ -78,7 +78,7 @@ def ball_movement(x, y):
     return x, y
 
 def ballxbrick(ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2):
-    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2  
+    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed  
     for h in range(6):
         if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and textop <= ball_y <= texbtom: #rebond contre brique gauche
             xball_speed = xball_speed
