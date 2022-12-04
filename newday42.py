@@ -80,7 +80,7 @@ def ball_movement(x, y):
 def brique_destruction():
     global brick_x, brick_y, yball_speed, xball_speed
     for i in range(0, 19):
-        if brick_x[i]<= x <= (brick_x[i] -30) and y == brick_y[i]:
+        if brick_x[i-1]<= x <= brick_x[i] and y == brick_y[i-1]:
             brick_x.pop(i)
             brick_y.pop(i)
             xball_speed = xball_speed
