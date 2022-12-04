@@ -54,7 +54,9 @@ def ball_movement(x, y):
             for l in range (5):
                 if brick_x[l -1] <= x <= brick_x[l]:
                     xball_speed = xball_speed 
-                    yball_speed = -yball_speed       
+                    yball_speed = -yball_speed  
+                    brique_x.pop(l - 1)
+                    brique_y.pop(k - 1)
     else:
         xball_speed = xball_speed
         yball_speed = yball_speed
