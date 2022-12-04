@@ -122,7 +122,7 @@ def update():
         ball_x, ball_y = 128, 200
     if pyxel.btnr(pyxel.KEY_SPACE):
         gmae = True
-    if game == True
+    if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
         ball_x, ball_y = ballxbrick(ball_x, ball_y)
     
