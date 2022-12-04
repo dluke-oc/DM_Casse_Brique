@@ -14,8 +14,8 @@ ball_x = 128
 ball_y = 210
 
 
-xball_speed = 5
-yball_speed = 5
+xball_speed = 3
+yball_speed = 3
 brick_x = [38, 68, 98, 128, 158, 188] 
 brick_y = [62, 62, 62, 62, 62, 62]
 brick_x2 = [38, 68, 98, 128, 158, 188]
