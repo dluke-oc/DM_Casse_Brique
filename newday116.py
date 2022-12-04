@@ -78,7 +78,7 @@ def ball_movement(x, y):
     return x, y
 
 def ballxbrick(ball_x, ball_y):
-    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_x2
+    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2
     if (ball_x == exright or ball_x == exleft) and textop <= ball_y and ball_y <= texbtom: #rebond contre brique droite
         xball_speed = -xball_speed
         yball_speed = yball_speed 
