@@ -4,7 +4,7 @@ import pyxel
 # taille de la fenetre 256x256 pixels
 # ne pas modifier
 pyxel.init(256, 256, title="Nuit du c0de")
-#game = False
+
 
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
@@ -14,7 +14,7 @@ ball_x = 128
 ball_y = 210
 score = 0
 vie = 3
-
+game = False
 
 xball_speed = 5
 yball_speed = 3
@@ -101,6 +101,12 @@ def ballxbrick(ball_x, ball_y):
            
     return ball_x, ball_y
 
+def life():
+    if ball_y > 250:
+        vie = vie - 1
+        game = False
+
+        
      
 
 # =========================================================
@@ -112,8 +118,13 @@ def update():
     global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed, score, vie
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
-    ball_x, ball_y = ball_movement(ball_x, ball_y)
-    ball_x, ball_y = ballxbrick(ball_x, ball_y)
+    if game == False:
+        ball_x, ball_y = 128, 200
+    if pyxel.btnr(pyxel.KEY_SPACE):
+        gmae = True
+    if game == True
+        ball_x, ball_y = ball_movement(ball_x, ball_y)
+        ball_x, ball_y = ballxbrick(ball_x, ball_y)
     
    
     #if game == False:
@@ -150,6 +161,10 @@ def draw():
         d = brick_x2[i - 1]
         e = brick_y2[i - 1]
         pyxel.rectb(d, e, 30, 14, 11)
+    
+    if vie == 0:
+        pyxel.cls(0)
+        pyxel.text(128, 128, "Game Over", 7)
    
     
     #for by in range(4):
