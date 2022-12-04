@@ -36,8 +36,8 @@ def vaisseau_deplacement(x, y):
             x = x - 4
     return x, y
 
-def ball_movement(x, y, xball_speed, yball_speed):
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, exleft, exright, textop, texbtom, bextop, bexbtom
+def ball_movement(x, y):
+    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, exleft, exright, textop, texbtom, bextop, bexbtom
     x -= xball_speed
     y -= yball_speed
     if (x < 5) or (x > 246):
@@ -101,7 +101,7 @@ def update():
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
-    ball_x, ball_y, xspeed_ball, yspeed_ball = ball_movement(ball_x, ball_y, xball_speed, yball_speed)
+    ball_x, ball_y = ball_movement(ball_x, ball_y)
    
     #if pyxel.btnr(pyxel.KEY_SPACE):
        # game = True
