@@ -3,7 +3,7 @@ import pyxel
 
 # taille de la fenetre 256x256 pixels
 # ne pas modifier
-pyxel.init(256, 256, title="Nuit du c0de")
+pyxel.init(256, 256, title="Casse_Brique")
 
 
 # position initiale du vaisseau
@@ -111,7 +111,7 @@ def life(game, vie):
 
 def victory(win):
     global brick_x, brick_y, brick_x2, brick_y2
-    if brick_x == [38, 68, 98, 128, 158, 188] and brick_y == [62, 62, 62, 62, 62, 62] and brick_x2 == [68, 98, 128, 158, 188] and brick_y2 == [90, 90, 90, 90, 90]:
+    if len(brick_x) == 6 and len(brick_y) == 6 and len(brick_x2) == 5 and len(brick_y2) == 5:
         win = True
     return win
         
