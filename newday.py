@@ -47,6 +47,10 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed *1.015
             yball_speed = -yball_speed*1.015
+    if (31 * 2) < y < ((52*2) + (7*2)):
+        if (19*2) < x < ((94*2)+(15*2)):            
+            xball_speed = xball_speed *1.015
+            yball_speed = -yball_speed*1.015       
     else:
         xball_speed = xball_speed
         yball_speed = yball_speed
