@@ -155,7 +155,7 @@ def draw():
         e = brick_y2[i - 1]
         pyxel.rectb(d, e, 30, 14, 11)
    
-    pyxel.text(3, 2, f"score: {score}", 7)
+    pyxel.text(2, 2, f"score: {score}", 7)
     
     #for by in range(4):
         #for i in range(0, 7):
