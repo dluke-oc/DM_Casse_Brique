@@ -12,6 +12,7 @@ vaisseau_x = 128
 vaisseau_y = 220
 ball_x = 128
 ball_y = 210
+score = 0
 
 
 xball_speed = 3
@@ -85,12 +86,14 @@ def ballxbrick(ball_x, ball_y):
             brick_y.pop(h - 1)
             xball_speed = xball_speed
             yball_speed = -yball_speed  
+            score += 10
             break
         if (ball_x == brick_x[h - 1] or ball_x == (brick_x[h -1] + 30))and textop <= ball_y <= texbtom:
             brick_x.pop(h - 1)
             brick_y.pop(h - 1)
             xball_speed = xball_speed
             yball_speed = -yball_speed  
+            score += 10
             break
     for i in range(0, len(brick_x2)):
         if brick_x2[i-1] <= ball_x and ball_x <= (brick_x2[i-1] + 30) and bextop <= ball_y <= bexbtom: #rebond contre brique  nivinf
@@ -98,6 +101,7 @@ def ballxbrick(ball_x, ball_y):
             brick_y2.pop(i - 1)
             ball_speed = xball_speed
             yball_speed = -yball_speed
+            score += 15
             break
      
            
@@ -114,6 +118,8 @@ def update():
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     ball_x, ball_y = ball_movement(ball_x, ball_y)
     ball_x, ball_y = ballxbrick(ball_x, ball_y)
+    
+    score = score_timer(score)
    
     #if game == False:
      #   ball_x, ball_y = 128, 210
@@ -148,6 +154,8 @@ def draw():
         d = brick_x2[i - 1]
         e = brick_y2[i - 1]
         pyxel.rectb(d, e, 30, 14, 11)
+   
+    pyxel.text(3, 2, f"score: {score}", 7)
     
     #for by in range(4):
         #for i in range(0, 7):
