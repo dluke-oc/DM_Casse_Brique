@@ -23,7 +23,7 @@ exright = 218
 textop = 62
 texbtom = 76
 bextop = 90
-bexbtom = 98
+bexbtom = 200
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -89,7 +89,7 @@ def ballxbrick(x, y, xball_speed, yball_speed):
     if exleft < x and x < exright and y == bexbtom: #rebond contre brique gauche
         xball_speed = xball_speed
         yball_speed = -yball_speed
-    if exleft < x and x < exright and y == textop: #rebond contre brique haut nivinf
+    if exleft < x and x < exright and y == bextop: #rebond contre brique haut nivinf
         xball_speed = xball_speed
         yball_speed = -yball_speed
     return x, y, xball_speed, yball_speed
