@@ -58,7 +58,14 @@ def ball_movement(x, y):
         yball_speed = yball_speed      
     if extop <= y <= exbtom and exleft <= x <= exright:
         xball_speed = xball_speed
-        yball_Speed = -yball_speed       
+        yball_Speed = -yball_speed
+    if y == extop and exleft <= x <= exright:
+        xball_speed = xball_speed
+        yball_speed = -yball_speed
+    if y == exbtom and exleft <= x <= exright:
+        xball_speed = xball_speed
+        yball_speed = -yball_speed
+       
     #if 62 <= y <= 90:
            #for l in range (5):
             #if brick_x[l -1] <= x <= brick_x[l]:
