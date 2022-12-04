@@ -85,14 +85,12 @@ def ballxbrick(ball_x, ball_y):
             brick_y.pop(h - 1)
             xball_speed = xball_speed
             yball_speed = -yball_speed   
-            break
     for i in range(0, len(brick_x2)):
         if brick_x2[i-1] <= ball_x and ball_x <= (brick_x2[i-1] + 30) and bextop <= ball_y <= bexbtom: #rebond contre brique haut nivinf
             brick_x2.pop(i - 1)
             brick_y2.pop(i - 1)
             ball_speed = xball_speed
             yball_speed = -yball_speed
-            break
            
     return ball_x, ball_y
 
