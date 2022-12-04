@@ -101,7 +101,7 @@ def draw():
     pyxel.circ(ball_x,ball_y, 5, 4)
     for by in range(3):
         for i in range(0, 6):
-            pyxel.rectb(brick_x[i - 1], brick_y[by -1], (brick_y[by] - brick_y[by - 1]), (brick_x[i] - brick_x[i - 1]), 10+by)
+            pyxel.rectb(brick_x[i - 1], brick_y[by -1], (brick_x[i] - brick_x[i - 1]), (brick_y[by] - brick_y[by - 1]), 10+by)
             """pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
             pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
             pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
