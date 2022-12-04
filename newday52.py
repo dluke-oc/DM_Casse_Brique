@@ -54,32 +54,33 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed #*1.015
             yball_speed = -yball_speed#*1.015
-    if ball_x == exright and extop <= y <= exbtom: #rebond contre brique droite
-        xball_speed = -xball_speed
-        yball_speed = yball_speed      
-    if ball_x == exleft and extop <= y <= exbtom: #rebond contre brique gauche
-        xball_speed = xball_speed
-        yball_Speed = -yball_speed
-    if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
-        xball_speed = xball_speed
-        yball_speed = -yball_speed
-    if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
-        xball_speed = xball_speed
-        yball_speed = -yball_speed
+    #if ball_x == exright and extop <= y <= exbtom: #rebond contre brique droite
+     #   xball_speed = -xball_speed
+      #  yball_speed = yball_speed      
+    #if ball_x == exleft and extop <= y <= exbtom: #rebond contre brique gauche
+     #   xball_speed = xball_speed
+      #  yball_Speed = -yball_speed
+    #if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
+     #   xball_speed = xball_speed
+      #  yball_speed = -yball_speed
+    #if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
+     #   xball_speed = xball_speed
+      #  yball_speed = -yball_speed
        
-    #if 62 <= y <= 90:
-           #for l in range (5):
-            #if brick_x[l -1] <= x <= brick_x[l]:
-                #xball_speed = xball_speed 
-                #yball_speed = -yball_speed
+    if 62 <= y <= 90:
+        for l in range (5):
+            if brick_x[l -1] <= x <= brick_x[l]:
+                xball_speed = xball_speed 
+                yball_speed = -yball_speed
+                brick_x.pop(l-1)
+                brick_y.pop(l-1)
     else:
         xball_speed = xball_speed
         yball_speed = yball_speed
     
-    return x, y
+    return x, y, brick_x, brick_y
 
 
-            
  
       
 
