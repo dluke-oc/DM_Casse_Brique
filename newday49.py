@@ -54,18 +54,18 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed #*1.015
             yball_speed = -yball_speed#*1.015
-   #if ball_x == exright and extop <= y <= exbtom: #rebond contre brique droite
-    #    xball_speed = -xball_speed
-     #   yball_speed = yball_speed      
-    #if ball_x == exleft and extop <= y <= exbtom: #rebond contre brique gauche
-     #   xball_speed = xball_speed
-      #  yball_Speed = -yball_speed
-    #if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
-     #   xball_speed = xball_speed
-     #   yball_speed = -yball_speed
-    #if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
-     #   xball_speed = xball_speed
-      #  yball_speed = -yball_speed"""
+   if ball_x == exright and extop <= y <= exbtom: #rebond contre brique droite
+        xball_speed = -xball_speed
+        yball_speed = yball_speed      
+    if ball_x == exleft and extop <= y <= exbtom: #rebond contre brique gauche
+        xball_speed = xball_speed
+        yball_Speed = -yball_speed
+    if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
+        xball_speed = xball_speed
+        yball_speed = -yball_speed
+    if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
+        xball_speed = xball_speed
+        yball_speed = -yball_speed
        
     #if 62 <= y <= 90:
            #for l in range (5):
@@ -78,18 +78,7 @@ def ball_movement(x, y):
     
     return x, y
 
-def brick_destruction():
-    global brick_x, brick_y, yball_speed, xball_speed
-    for i in range(0, 19):
-        if brick_x[i-1]<= x <= brick_x[i] and y == brick_y[0]:
-            brick_x.pop(i)
-            brick_y.pop(i)
-            xball_speed = xball_speed
-            yball_speed = -yball_speed
-        if brick_x[i-1] <= x <= brick_x[i] and y == brick_y[17]:
-            xball_speed = xball_speed
-            yball_speed = -yball_speed
-    return xball_speed, yball_speed, brick_x, brick_y
+
             
  
       
@@ -112,7 +101,7 @@ def update():
         game = True
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
-        brick_destruction()
+
     
     
 # =========================================================
