@@ -16,7 +16,7 @@ score = 0
 vie = 3
 
 
-xball_speed = 3
+xball_speed = 5
 yball_speed = 3
 brick_x = [38, 68, 98, 128, 158, 188] 
 brick_y = [62, 62, 62, 62, 62, 62]
