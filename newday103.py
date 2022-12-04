@@ -92,8 +92,7 @@ def ballxbrick(ball_x, ball_y):
             yball_speed = -yball_speed
             brick_x.pop[i + 5]
             brick_y.pop[i + 5]
-    return ball_x, ball_y, brick_x, brick_y
-
+    return ball_x, ball_y
 
 # =========================================================
 # == UPDATE
