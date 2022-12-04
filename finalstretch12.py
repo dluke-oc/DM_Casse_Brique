@@ -167,7 +167,7 @@ def draw():
     
     if vie == 0:
         pyxel.cls(0)
-        pyxel.text(118, 128, "Game Over", 7)
+        pyxel.text(110, 128, "Game Over", 7)
    
     
     #for by in range(4):
