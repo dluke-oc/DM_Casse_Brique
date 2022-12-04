@@ -54,12 +54,12 @@ def ball_movement(x, y):
     if  215 <= y <= (238):
         if (vaisseau_x -20) <= x < (vaisseau_x) or (vaisseau_x + 32) < x <= (vaisseau_x + 55):
             ball_y = ball_y + 5
-            xball_speed = -xball_speed#*1.015
-            yball_speed = -yball_speed#*1.015
+            xball_speed = -xball_speed*1.015
+            yball_speed = -yball_speed*1.015
         elif vaisseau_x <= x <= (vaisseau_x +32):
             ball_y = ball_y + 5
-            xball_speed = xball_speed #*1.015
-            yball_speed = -yball_speed#*1.015
+            xball_speed = xball_speed*1.015
+            yball_speed = -yball_speed*1.015
       
       
     #if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
@@ -83,13 +83,6 @@ def ballxbrick(ball_x, ball_y):
     global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score
     for h in range(0, len(brick_x)):
         if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and textop <= ball_y <= texbtom: #rebond contre brique nivsup
-            brick_x.pop(h - 1)
-            brick_y.pop(h - 1)
-            xball_speed = xball_speed
-            yball_speed = -yball_speed  
-            score = score + 10
-            break
-        if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and (ball_y == textop or ball_y == texbtom) :
             brick_x.pop(h - 1)
             brick_y.pop(h - 1)
             xball_speed = xball_speed
