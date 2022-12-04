@@ -120,7 +120,7 @@ def draw():
 
     
     pyxel.circ(ball_x,ball_y, 5, 4)
-    for i in range(0, 14):
+    for i in range(0, 12):
         b = brick_x[i - 1]
         c = brick_y[i - 1]
         pyxel.rectb(b, c, 30, 14, 10)
