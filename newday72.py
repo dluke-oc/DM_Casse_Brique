@@ -101,7 +101,7 @@ def update():
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
-    ball_x, ball_y = ball_movement(ball_x, ball_y)
+    ball_x, ball_y, xspeed_ball, yspeed_ball = ball_movement(ball_x, ball_y, xball_speed, yball_speed)
    
     #if pyxel.btnr(pyxel.KEY_SPACE):
        # game = True
