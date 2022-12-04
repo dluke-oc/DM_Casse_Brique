@@ -17,6 +17,10 @@ xball_speed = 5
 yball_speed = 5
 brick_x = [38, 68, 98, 128, 158, 188] 
 brick_y = [62, 76, 90]
+exleft = 38
+exright = 218
+extop = 62
+exbtom = 104
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -30,7 +34,7 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def ball_movement(x, y):
-    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y
+    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, exleft, exright, exbtom, extop
     x -= xball_speed
     y -= yball_speed
     if (x < 5) or (x > 246):
@@ -49,11 +53,18 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed #*1.015
             yball_speed = -yball_speed#*1.015
-    if 62 <= y <= 90:     
+    if (x == exleft or x == exright) and extop <= y <= exbtom:
+        xball_speed = -xball_speed
+        yball_speed = yball_speed
+    if (y == extop or y == exbtom) and exleft <= x <= exright:
+        xball_speed = xball_speed
+        yball_Speed = -yball_speed
+        
+   """ if 62 <= y <= 90:     
         for l in range (5):
             if brick_x[l -1] <= x <= brick_x[l]:
                 xball_speed = xball_speed 
-                yball_speed = -yball_speed  
+                yball_speed = -yball_speed  """
     else:
         xball_speed = xball_speed
         yball_speed = yball_speed
