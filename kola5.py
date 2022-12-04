@@ -92,8 +92,8 @@ def ballxbrick(ball_x, ball_y):
             break
     for i in range(0, len(brick_x2)):
         if brick_x2[i-1] <= ball_x and ball_x <= (brick_x2[i] + 30) and bextop <= ball_y <= bexbtom: #rebond contre brique  nivinf
-            brick_x2.pop(i)
-            brick_y2.pop(i)
+            brick_x2.pop(i - 1)
+            brick_y2.pop(i - 1)
             ball_speed = xball_speed
             yball_speed = -yball_speed
             score = score + 15
