@@ -23,7 +23,7 @@ exright = 218
 textop = 62
 texbtom = 76
 bextop = 90
-bexbtom = 200
+bexbtom = 118
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
