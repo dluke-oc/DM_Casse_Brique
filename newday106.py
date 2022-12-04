@@ -92,8 +92,8 @@ def ballxbrick(ball_x, ball_y):
         if brick_x2[i-1] <= ball_x and ball_x <= brick_x2[i] and brick_y2[i - 1] <= ball_y <= brick_y2[i]: #rebond contre brique haut nivinf
             xball_speed = xball_speed
             yball_speed = -yball_speed
-            brick_x.pop[i - 1]
-            brick_y.pop[i - 1]
+            brick_x.pop(i - 1)
+            brick_y.pop(i - 1)
     return ball_x, ball_y
 
 # =========================================================
