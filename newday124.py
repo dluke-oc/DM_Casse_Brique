@@ -4,7 +4,7 @@ import pyxel
 # taille de la fenetre 256x256 pixels
 # ne pas modifier
 pyxel.init(256, 256, title="Nuit du c0de")
-#game = False
+game = True
 
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
@@ -77,20 +77,22 @@ def ball_movement(x, y):
     
     return x, y
 
-def ballxbrick(ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2):
-    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed  
-    for h in range(6):
-        if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and textop <= ball_y <= texbtom: #rebond contre brique gauche
-            xball_speed = xball_speed
-            yball_speed = -yball_speed
-            brick_x.pop(h - 1)
-            brick_y.pop(h - 1)
-    for i in range(6):
-        if brick_x2[i-1] <= ball_x and ball_x <= (brick_x2[i-1] + 30) and bextop <= ball_y <= bexbtom: #rebond contre brique haut nivinf
-            xball_speed = xball_speed
-            yball_speed = -yball_speed
-            brick_x2.pop(i - 1)
-            brick_y2.pop(i - 1)
+def ballxbrick(ball_x, ball_y):
+    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, game
+    while game == True:
+        for h in range(6):
+            if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and textop <= ball_y <= texbtom: #rebond contre brique gauche
+                brick_x.pop(h - 1)
+                brick_y.pop(h - 1)
+                xball_speed = xball_speed
+                yball_speed = -yball_speed            
+        for i in range(6):
+            if brick_x2[i-1] <= ball_x and ball_x <= (brick_x2[i-1] + 30) and bextop <= ball_y <= bexbtom: #rebond contre brique haut nivinf
+                brick_x2.pop(i - 1)
+                brick_y2.pop(i - 1)
+                ball_speed = xball_speed
+                yball_speed = -yball_speed
+           
     return ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2
 
 # =========================================================
@@ -104,7 +106,7 @@ def update():
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     ball_x, ball_y = ball_movement(ball_x, ball_y)
-    ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2 = ballxbrick(ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2)
+    ball_x, ball_y = ballxbrick(ball_x, ball_y)
    
     #if pyxel.btnr(pyxel.KEY_SPACE):
        # game = True
