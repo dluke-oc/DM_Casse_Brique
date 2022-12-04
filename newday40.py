@@ -128,7 +128,7 @@ def draw():
     for i in range(0, 19):
         b = brick_x[i - 1]
         c = brick_y[i - 1]
-        pyxel.rectb(b, c, 30, 14, 10)
+        pyxel.rect(b, c, 30, 14, 10)
     
     #for by in range(4):
         #for i in range(0, 7):
