@@ -4,6 +4,7 @@ import pyxel
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
 pyxel.init(256, 256, title="Nuit du c0de")
+game = False
 
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
@@ -98,12 +99,14 @@ def brick_destruction():
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed, game, x, y
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
-    
-    game = True
+    if game == False:
+        x, y = 128, 200
+    if pyxel.btnr(pyxel.KEY_SPACE):
+        game = True
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
         brick_destruction()
