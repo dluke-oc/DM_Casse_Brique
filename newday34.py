@@ -53,7 +53,7 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed #*1.015
             yball_speed = -yball_speed#*1.015
-    if ball_x == exright and extop <= y <= exbtom: #rebond contre brique droite
+   """ if ball_x == exright and extop <= y <= exbtom: #rebond contre brique droite
         xball_speed = -xball_speed
         yball_speed = yball_speed      
     if ball_x == exleft and extop <= y <= exbtom: #rebond contre brique gauche
@@ -64,7 +64,7 @@ def ball_movement(x, y):
         yball_speed = -yball_speed
     if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
         xball_speed = xball_speed
-        yball_speed = -yball_speed
+        yball_speed = -yball_speed"""
        
     #if 62 <= y <= 90:
            #for l in range (5):
@@ -77,6 +77,13 @@ def ball_movement(x, y):
     
     return x, y
 
+def brique_destruction():
+    for i in range(0, 19):
+        if brick_x[i]<= x <= brick_x[i + 30] and y == brick_y[i]:
+            brick_x.pop(i)
+            brick_y.pop(i)
+            xball_speed = xball_speed
+            yball_speed = -yball_speed
  
       
 
