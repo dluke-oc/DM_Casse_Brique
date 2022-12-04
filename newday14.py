@@ -99,13 +99,13 @@ def draw():
 
     
     pyxel.circ(ball_x,ball_y, 5, 4)
-    
-    for i in range(0, 3):
-        pyxel.rectb(19*2, (24+(i*7))*2, 15*2, 7*2, 10+i)
-        pyxel.rectb(34*2, (24+(i*7))*2, 15*2, 7*2, 10+i)
-        pyxel.rectb(49*2, (24+(i*7))*2, 15*2, 7*2, 10+i)
-        pyxel.rectb(64*2, (24+(i*7))*2, 15*2, 7*2, 10+i)
-        pyxel.rectb(79*2, (24+(i*7))*2, 15*2, 7*2, 10+i)
-        pyxel.rectb(94*2, (24+(i*7))*2, 15*2, 7*2, 10+i)
+    for by in range(3):
+        for i in range(0, 6):
+            pyxel.rectb(brick_x[i - 1], brick_y[by -1], (brick_y[by] - brick_y[by - 1]), (brick_x[i] - [brick_x[i - 1]), 10+by)
+            """pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
+            pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
+            pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
+            pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
+            pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)"""
     
 pyxel.run(update, draw)
