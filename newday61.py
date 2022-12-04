@@ -4,7 +4,7 @@ import pyxel
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
 pyxel.init(256, 256, title="Nuit du c0de")
-game = False
+#game = False
 
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
@@ -97,11 +97,11 @@ def update():
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
-
+    ball_x, ball_y = ball_movement(ball_x, ball_y)
     #if pyxel.btnr(pyxel.KEY_SPACE):
        # game = True
     #if game == True:
-    ball_x, ball_y = ball_movement(ball_x, ball_y)
+    
       #  brickbreaker()
     
     
