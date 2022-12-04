@@ -16,10 +16,10 @@ ball_y = 80
 
 xball_speed = 5
 yball_speed = 5
-brick_x = [38, 68, 98, 128, 158, 188, 218] 
-brick_y = [62, 62, 62, 62, 62, 62, 62]
-brick_x2 = [38, 68, 98, 128, 158, 188, 218]
-brick_y2 = [90, 90, 90, 90, 90, 90, 90]
+brick_x = [38, 68, 98, 128, 158, 188] 
+brick_y = [62, 62, 62, 62, 62, 62]
+brick_x2 = [38, 68, 98, 128, 158, 188]
+brick_y2 = [90, 90, 90, 90, 90, 90]
 exleft = 38
 exright = 218
 textop = 62
@@ -86,13 +86,13 @@ def ballxbrick(ball_x, ball_y):
         xball_speed = -xball_speed
         yball_speed = yball_speed   
     for h in range(6):
-        if brick_x[h-1] <= ball_x and ball_x <= brick_x[h] and brick_y[h - 1] <= ball_y <= brick_y[h]: #rebond contre brique gauche
+        if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and textop <= ball_y <= texbtom: #rebond contre brique gauche
             xball_speed = xball_speed
             yball_speed = -yball_speed
             brick_x.pop(h - 1)
             brick_y.pop(h - 1)
     for i in range(6):
-        if brick_x2[i-1] <= ball_x and ball_x <= brick_x2[i] and brick_y2[i - 1] <= ball_y <= brick_y2[i]: #rebond contre brique haut nivinf
+        if brick_x2[i-1] <= ball_x and ball_x <= (brick_x2[i-1] + 30) and bextop <= ball_y <= bexbtom: #rebond contre brique haut nivinf
             xball_speed = xball_speed
             yball_speed = -yball_speed
             brick_x2.pop(i - 1)
