@@ -16,8 +16,8 @@ ball_y = 80
 
 xball_speed = 5
 yball_speed = 5
-brick_x = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188] 
-brick_y = [62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90]
+brick_x = [38, 68, 98, 128, 158, 188] 
+brick_y = [62, 62, 62, 62, 62, 62]
 brick_x2 = [38, 68, 98, 128, 158, 188]
 brick_y2 = [90, 90, 90, 90, 90, 90]
 exleft = 38
@@ -78,7 +78,7 @@ def ball_movement(x, y):
     return x, y
 
 def ballxbrick(ball_x, ball_y):
-    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y
+    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_x2
     if (ball_x == exright or ball_x == exleft) and textop <= ball_y and ball_y <= texbtom: #rebond contre brique droite
         xball_speed = -xball_speed
         yball_speed = yball_speed 
@@ -135,10 +135,14 @@ def draw():
 
     
     pyxel.circ(ball_x,ball_y, 5, 4)
-    for i in range(0, 12):
+    for i in range(0, 6):
         b = brick_x[i - 1]
         c = brick_y[i - 1]
         pyxel.rectb(b, c, 30, 14, 10)
+    for i in range(0, 6):
+        d = brick_x2[i - 1]
+        e = brick_y2[i - 1]
+        pyxel.rectb(d, e, 30, 14, 11)
     
     #for by in range(4):
         #for i in range(0, 7):
