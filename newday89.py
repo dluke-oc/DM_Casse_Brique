@@ -48,11 +48,11 @@ def ball_movement(x, y):
         ball_y = ball_y - 5
         yball_speed = -yball_speed
     if  215 <= y <= (238):
-        if (vaisseau_x -20) <= x < (vaisseau_x):
+        if (vaisseau_x -20) <= x < (vaisseau_x) or (vaisseau_x + 32) < x <= (vaisseau_x + 55):
             ball_y = ball_y + 5
             xball_speed = -xball_speed#*1.015
             yball_speed = -yball_speed#*1.015
-        elif vaisseau_x <= x <= (vaisseau_x +55):
+        elif vaisseau_x <= x <= (vaisseau_x +32):
             ball_y = ball_y + 5
             xball_speed = xball_speed #*1.015
             yball_speed = -yball_speed#*1.015
@@ -74,10 +74,7 @@ def ball_movement(x, y):
         yball_speed = yball_speed
     
     return x, y
-#def brickbreaker():
- #   global xball_speed, yball_speed, brick_x, brick_y, ball_y
-    
-  #  return brick_x, brick_y, xball_speed, yball_speed
+
 def ballxbrick(ball_x, ball_y, xball_speed, yball_speed):
     global exright, exleft, textop, texbtom, bextop, bexbtom
     if (ball_x == exright or ball_x == exleft) and textop <= ball_y and ball_y <= texbtom: #rebond contre brique droite
@@ -89,7 +86,7 @@ def ballxbrick(ball_x, ball_y, xball_speed, yball_speed):
     if exleft < ball_x and ball_x < exright and ball_y == textop: #rebond contre brique gauche
         xball_speed = xball_speed
         yball_speed = -yball_speed
-    if exleft < ball_x and ball_x < exright and ball_y == bexbtom: #rebond contre brique haut nivinf
+    if exleft < ball_x and ball_x < exright and (ball_y == bextop or ball_y == bexbtom): #rebond contre brique haut nivinf
         xball_speed = xball_speed
         yball_speed = -yball_speed
     return ball_x, ball_y, xball_speed, yball_speed
