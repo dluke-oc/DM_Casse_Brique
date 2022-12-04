@@ -115,13 +115,13 @@ def life():
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed, score, vie
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed, score, vie, game
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     if game == False:
         ball_x, ball_y = 128, 200
     if pyxel.btnr(pyxel.KEY_SPACE):
-        gmae = True
+        game= True
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
         ball_x, ball_y = ballxbrick(ball_x, ball_y)
