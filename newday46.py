@@ -77,7 +77,7 @@ def ball_movement(x, y):
     
     return x, y
 
-def brique_destruction():
+def brick_destruction():
     global brick_x, brick_y, yball_speed, xball_speed
     for i in range(0, 19):
         if brick_x[i-1]<= x <= brick_x[i] and y == brick_y[i-1]:
