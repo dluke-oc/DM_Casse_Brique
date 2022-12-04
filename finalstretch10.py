@@ -120,6 +120,7 @@ def update():
     global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed, score, vie, game
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
+    game, vie = life(game, vie)
     if game == False:
         ball_x, ball_y = 128, 200
     if pyxel.btnr(pyxel.KEY_SPACE):
