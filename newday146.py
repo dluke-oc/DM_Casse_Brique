@@ -12,7 +12,6 @@ vaisseau_x = 128
 vaisseau_y = 220
 ball_x = 128
 ball_y = 210
-score = 0
 
 
 xball_speed = 3
@@ -104,11 +103,7 @@ def ballxbrick(ball_x, ball_y):
            
     return ball_x, ball_y
 
-def score():
-    if ballxbrick():
-        score = score + 10
-        
-    return score
+     
 
 # =========================================================
 # == UPDATE
@@ -122,7 +117,6 @@ def update():
     ball_x, ball_y = ball_movement(ball_x, ball_y)
     ball_x, ball_y = ballxbrick(ball_x, ball_y)
     
-    score = score_timer(score)
    
     #if game == False:
      #   ball_x, ball_y = 128, 210
@@ -158,7 +152,6 @@ def draw():
         e = brick_y2[i - 1]
         pyxel.rectb(d, e, 30, 14, 11)
    
-    pyxel.text(2, 2, f"score: {score}", 7)
     
     #for by in range(4):
         #for i in range(0, 7):
