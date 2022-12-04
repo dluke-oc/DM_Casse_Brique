@@ -20,7 +20,7 @@ brick_x = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188]
 brick_y = [62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90]
 exleft = 38
 exright = 218
-textop = 200
+textop = 62
 texbtom = 76
 bextop = 90
 bexbtom = 118
@@ -75,8 +75,8 @@ def ball_movement(x, y):
     
     return x, y
 
-def ballxbrick(ball_x, ball_y, xball_speed, yball_speed):
-    global exright, exleft, textop, texbtom, bextop, bexbtom
+def ballxbrick(ball_x, ball_y):
+    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed
     if (ball_x == exright or ball_x == exleft) and textop <= ball_y and ball_y <= texbtom: #rebond contre brique droite
         xball_speed = -xball_speed
         yball_speed = yball_speed 
@@ -103,7 +103,7 @@ def update():
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     ball_x, ball_y = ball_movement(ball_x, ball_y)
-    ball_x, ball_y, xball_speed, yball_speed = ballxbrick(ball_x, ball_y, xball_speed, yball_speed)
+    ball_x, ball_y = ballxbrick(ball_x, ball_y)
    
     #if pyxel.btnr(pyxel.KEY_SPACE):
        # game = True
