@@ -109,10 +109,11 @@ def life(game, vie):
         game = False
     return game, vie
 
-def win(win):
+def victory(win):
     global brick_x, brick_y, brick_x2, brick_y2
     if brick_x == [38, 68, 98, 128, 158, 188] and brick_y == [62, 62, 62, 62, 62, 62] and brick_x2 == [68, 98, 128, 158, 188] and brick_y2 == [90, 90, 90, 90, 90]:
         win = True
+    return win
         
      
 
@@ -126,7 +127,7 @@ def update():
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     game, vie = life(game, vie)
-    win = win(win)
+    win = victory(win)
     if game == False:
         ball_x, ball_y = 128, 200
     if pyxel.btnr(pyxel.KEY_SPACE):
