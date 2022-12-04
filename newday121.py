@@ -10,8 +10,8 @@ pyxel.init(256, 256, title="Nuit du c0de")
 # (origine des positions : coin haut gauche)
 vaisseau_x = 128
 vaisseau_y = 220
-ball_x = 60
-ball_y = 80
+ball_x = 128
+ball_y = 220
 
 
 xball_speed = 5
