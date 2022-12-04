@@ -102,6 +102,7 @@ def ballxbrick(ball_x, ball_y):
     return ball_x, ball_y
 
 def life():
+    global ball_y, game, vie
     if ball_y > 250:
         vie = vie - 1
         game = False
