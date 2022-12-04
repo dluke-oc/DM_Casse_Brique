@@ -20,8 +20,10 @@ brick_x = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188]
 brick_y = [62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90]
 exleft = 38
 exright = 218
-extop = 62
-exbtom = 104
+textop = 62
+texbtom = 76
+bextop = 90
+bexbtom = 104
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -35,7 +37,7 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def ball_movement(x, y):
-    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y
+    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, exleft, exright, textop, texbtom, bextop, bexbtom
     x -= xball_speed
     y -= yball_speed
     if (x < 5) or (x > 246):
@@ -54,12 +56,18 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed #*1.015
             yball_speed = -yball_speed#*1.015
-    #if ball_x == exright and extop <= y <= exbtom: #rebond contre brique droite
-     #   xball_speed = -xball_speed
-      #  yball_speed = yball_speed      
-    #if ball_x == exleft and extop <= y <= exbtom: #rebond contre brique gauche
-     #   xball_speed = xball_speed
-      #  yball_Speed = -yball_speed
+    if (x == exright or x == exleft) and textop <= y <= texbtom: #rebond contre brique droite
+        xball_speed = -xball_speed
+        yball_speed = yball_speed 
+    if (x == exright or x == exleft) and bextop <= y <= bexbtom: #rebond contre brique droite
+        xball_speed = -xball_speed
+        yball_speed = yball_speed   
+    if exleft <= x <= exright and (y == textop or y == texbtom): #rebond contre brique gauche
+        xball_speed = xball_speed
+        yball_Speed = -yball_speed
+    if exleft <= x <= exright and (y == bextop or y == bexbtom): #rebond contre brique gauche
+        xball_speed = xball_speed
+        yball_Speed = -yball_speed   
     #if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
      #   xball_speed = xball_speed
       #  yball_speed = -yball_speed
