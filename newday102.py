@@ -86,13 +86,13 @@ def ballxbrick(ball_x, ball_y):
     if exleft <= ball_x and ball_x <= exright and textop <= ball_y <= texbtom: #rebond contre brique gauche
         xball_speed = xball_speed
         yball_speed = -yball_speed
-    for i in range(5)
+    for i in range(5):
         if brick_x[i + 5] <= ball_x and ball_x <= brick[i + 6] and brick_y[i + 5] <= ball_y <= brick[i + 6]: #rebond contre brique haut nivinf
             xball_speed = xball_speed
             yball_speed = -yball_speed
             brick_x.pop[i + 5]
             brick_y.pop[i + 5]
-    return ball_x, ball_y
+    return ball_x, ball_y, brick_x, brick_y
 
 
 # =========================================================
