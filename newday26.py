@@ -60,11 +60,11 @@ def ball_movement(x, y):
         xball_speed = xball_speed
         yball_Speed = -yball_speed
         
-   """ if 62 <= y <= 90:
-           for l in range (5):
-            if brick_x[l -1] <= x <= brick_x[l]:
-                xball_speed = xball_speed 
-                yball_speed = -yball_speed  """
+    #if 62 <= y <= 90:
+           #for l in range (5):
+            #if brick_x[l -1] <= x <= brick_x[l]:
+                #xball_speed = xball_speed 
+                #yball_speed = -yball_speed
     else:
         xball_speed = xball_speed
         yball_speed = yball_speed
