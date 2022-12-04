@@ -98,12 +98,15 @@ def brique_destruction():
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
-    ball_x, ball_y = ball_movement(ball_x, ball_y)
+    game = true
+    if game == True:
+        ball_x, ball_y = ball_movement(ball_x, ball_y)
+        brick_destrucion()
     
     
 # =========================================================
