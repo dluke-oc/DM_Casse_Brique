@@ -66,21 +66,20 @@ def ball_movement(x, y):
     #if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
      #   xball_speed = xball_speed
       #  yball_speed = -yball_speed
-       
-    
-    else:
-        xball_speed = xball_speed
-        yball_speed = yball_speed
-    
-    return x, y
-def brickbreaker():
-    global xball_speed, yball_speed, brick_x, brick_y, ball_y
     if brick_y[0] <= ball_y <= (brick_y[17]+14):
         for l in range (18):
             if brick_x[l -1] <= x <= (brick_x[l-1]+30):
                 xball_speed = xball_speed 
-                yball_speed = -yball_speed
-    return brick_x, brick_y, xball_speed, yball_speed
+                yball_speed = -yball_speed    
+    else:
+        xball_speed = xball_speed
+        yball_speed = yball_speed
+    
+    return x, y, brick_x, brick_y
+#def brickbreaker():
+ #   global xball_speed, yball_speed, brick_x, brick_y, ball_y
+    
+  #  return brick_x, brick_y, xball_speed, yball_speed
 
 
  
