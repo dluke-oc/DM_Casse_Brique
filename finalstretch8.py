@@ -106,6 +106,7 @@ def life():
     if ball_y > 250:
         vie = vie - 1
         game = False
+    return game, vie
 
         
      
