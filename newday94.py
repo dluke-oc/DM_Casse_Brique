@@ -10,8 +10,8 @@ pyxel.init(256, 256, title="Nuit du c0de")
 # (origine des positions : coin haut gauche)
 vaisseau_x = 128
 vaisseau_y = 220
-ball_x = 128
-ball_y = 128
+ball_x = 60
+ball_y = 80
 
 
 xball_speed = 5
@@ -20,10 +20,10 @@ brick_x = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188]
 brick_y = [62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90]
 exleft = 38
 exright = 218
-textop = 200
+textop = 62
 texbtom = 76
 bextop = 90
-bexbtom = 118
+bexbtom = 200
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
