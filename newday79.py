@@ -89,7 +89,7 @@ def ballxbrick(x, y, xball_speed, yball_speed):
     if exleft < x and x < exright and (y == textop or y == texbtom): #rebond contre brique gauche
         xball_speed = xball_speed
         yball_speed = -yball_speed
-    if exleft < x and x < exright and (y == bextop or y == bexbtom): #rebond contre brique gauche
+    if exleft < x and x < exright and y == bextop: #rebond contre brique gauche
         xball_speed = xball_speed
         yball_speed = -yball_speed
     return x, y, xball_speed, yball_speed
