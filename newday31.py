@@ -19,8 +19,8 @@ brick_x = [38, 68, 98, 128, 158, 188]
 brick_y = [62, 76, 90]
 exleft = 38
 exright = 218
-extop = 58
-exbtom = 108
+extop = 62
+exbtom = 104
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -53,16 +53,16 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed #*1.015
             yball_speed = -yball_speed#*1.015
-    if exleft <= x <= exright and extop <= y <= exbtom:
+    if ball_x == exright and extop <= y <= exbtom: #rebond contre brique droite
         xball_speed = -xball_speed
         yball_speed = yball_speed      
-    if extop <= y <= exbtom and exleft <= x <= exright:
+    if ball_x == exleft and extop <= y <= exbtom: #rebond contre brique gauche
         xball_speed = xball_speed
         yball_Speed = -yball_speed
-    if y == extop and exleft <= x <= exright:
+    if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
         xball_speed = xball_speed
         yball_speed = -yball_speed
-    if y == exbtom and exleft <= x <= exright:
+    if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
         xball_speed = xball_speed
         yball_speed = -yball_speed
        
