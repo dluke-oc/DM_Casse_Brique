@@ -20,10 +20,10 @@ brick_x = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188]
 brick_y = [62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90]
 exleft = 38
 exright = 218
-textop = 62
+textop = 200
 texbtom = 76
 bextop = 90
-bexbtom = 200
+bexbtom = 118
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
