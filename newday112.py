@@ -77,7 +77,7 @@ def ball_movement(x, y):
     
     return x, y
 
-def ballxbrick(ball_x, ball_y):
+def ballxbrick(ball_x, ball_y, brick_x, brick_x2, brick_y, brick_y2):
     global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_x2
     if (ball_x == exright or ball_x == exleft) and textop <= ball_y and ball_y <= texbtom: #rebond contre brique droite
         xball_speed = -xball_speed
@@ -86,18 +86,18 @@ def ballxbrick(ball_x, ball_y):
         xball_speed = -xball_speed
         yball_speed = yball_speed   
     for h in range(6):
-        if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and textop <= ball_y <= texbtom: #rebond contre brique gauche
+        if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and brick_y[i - 1] <= ball_y <= (brick-y[i - 1] + 14): #rebond contre brique gauche
             xball_speed = xball_speed
             yball_speed = -yball_speed
             brick_x.pop(h - 1)
             brick_y.pop(h - 1)
     for i in range(6):
-        if brick_x2[i-1] <= ball_x and ball_x <= (brick_x2[i-1] + 30) and bextop <= ball_y <= bexbtom: #rebond contre brique haut nivinf
+        if brick_x2[i-1] <= ball_x and ball_x <= (brick_x2[i-1] + 30) and brick_y2[i -1] <= ball_y <= (brick-y2[i - 1] + 14): #rebond contre brique haut nivinf
             xball_speed = xball_speed
             yball_speed = -yball_speed
             brick_x2.pop(i - 1)
             brick_y2.pop(i - 1)
-    return ball_x, ball_y
+    return ball_x, ball_y, brick_x, brick_x2, brick_y, brick_y2
 
 # =========================================================
 # == UPDATE
@@ -110,7 +110,7 @@ def update():
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     ball_x, ball_y = ball_movement(ball_x, ball_y)
-    ball_x, ball_y = ballxbrick(ball_x, ball_y)
+    ball_x, ball_y, brick_x, brick_x2, brick_y, brick_y2 = ballxbrick(ball_x, ball_y, brick_x, brick_x2, brick_y, brick_y2)
    
     #if pyxel.btnr(pyxel.KEY_SPACE):
        # game = True
