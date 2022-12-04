@@ -106,7 +106,7 @@ def update():
     game = True
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
-        brick_destrucion()
+        brick_destruction()
     
     
 # =========================================================
