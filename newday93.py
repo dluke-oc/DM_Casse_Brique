@@ -30,10 +30,10 @@ def vaisseau_deplacement(x, y):
 
     if pyxel.btn(pyxel.KEY_RIGHT):
         if (x < 202) :
-            x = x + 4
+            x = x + 6
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 20) :
-            x = x - 4
+            x = x - 6
     return x, y
 
 def ball_movement(x, y):
