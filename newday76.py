@@ -80,17 +80,17 @@ def ball_movement(x, y):
   #  return brick_x, brick_y, xball_speed, yball_speed
 def ballxbrick(x, y, xball_speed, yball_speed):
     if (x == exright or x == exleft) and textop <= y and y <= texbtom: #rebond contre brique droite
-            xball_speed = -xball_speed
-            yball_speed = yball_speed 
-        if (x == exright or x == exleft) and bextop <= y  and y <= bexbtom: #rebond contre brique droite
-            xball_speed = -xball_speed
-            yball_speed = yball_speed   
-        if exleft <= x and x <= exright and (y == textop or y == texbtom): #rebond contre brique gauche
-            xball_speed = xball_speed
-            yball_Speed = -yball_speed
-        if exleft <= x and x <= exright and (y == bextop or y == bexbtom): #rebond contre brique gauche
-            xball_speed = xball_speed
-            yball_Speed = -yball_speed
+        xball_speed = -xball_speed
+        yball_speed = yball_speed 
+    if (x == exright or x == exleft) and bextop <= y  and y <= bexbtom: #rebond contre brique droite
+        xball_speed = -xball_speed
+        yball_speed = yball_speed   
+    if exleft <= x and x <= exright and (y == textop or y == texbtom): #rebond contre brique gauche
+        xball_speed = xball_speed
+        yball_speed = -yball_speed
+    if exleft <= x and x <= exright and (y == bextop or y == bexbtom): #rebond contre brique gauche
+        xball_speed = xball_speed
+        yball_speed = -yball_speed
     return x, y, xball_speed, yball_speed
 
 
