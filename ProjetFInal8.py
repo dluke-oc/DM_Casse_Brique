@@ -154,7 +154,7 @@ def ballxbrick(ball_x, ball_y):
             yball_speed = -yball_speed*1.050
             score = score + 10
             brick8 = False
-   elif brick9 == True:
+    elif brick9 == True:
         if (98) <= ball_x < (128) and 90 <= ball_y <= 104:
             i = brick_x2.index(98)
             brick_x2.pop(i)
