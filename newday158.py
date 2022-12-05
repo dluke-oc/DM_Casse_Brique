@@ -184,8 +184,8 @@ def life(game, vie):
     return game, vie
 
 def victory(win):
-    global brick_x, brick_y, brick_x2, brick_y2
-    if len(brick_x) == 0 and len(brick_y) == 0 and len(brick_x2) == 0 and len(brick_y2) == 0:
+    global score
+    if score == 130:
         win = True
     return win
         
