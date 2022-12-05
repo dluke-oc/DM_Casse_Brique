@@ -191,6 +191,8 @@ def update():
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
         ball_x, ball_y = ballxbrick(ball_x, ball_y)
+    
+    
     if score <= 70:
         xball_speed = xball_speed*1.75
         yball_speed = yball_speed*1.75
