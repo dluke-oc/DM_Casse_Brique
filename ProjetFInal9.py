@@ -19,23 +19,13 @@ win = False
 
 xball_speed = 5
 yball_speed = 3
+
 brick_x = [38, 68, 98, 128, 158, 188] 
 brick_y = [62, 62, 62, 62, 62, 62]
 brick_x2 = [38, 68, 98, 128, 158, 188]
 brick_y2 = [90, 90, 90, 90, 90, 90]
 totbrick = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-brick1 = True
-brick2 = True
-brick3 = True
-brick4 = True
-brick5 = True
-brick6 = True
-brick7 = True
-brick8 = True
-brick9 = True
-brick10 = True
-brick11 = True
-brick12 = True
+
 exleft = 38
 exright = 218
 textop = 62
@@ -82,114 +72,90 @@ def ball_movement(x, y):
 
 def ballxbrick(ball_x, ball_y):
     global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score
-    if brick1 == True:
-        if (38) <= ball_x < (68) and 62 <= ball_y <= 76:       
-            i = brick_x.index(38)
-            brick_x.pop(i)
-            brick_y.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 15
-            brick1 = False
-    elif brick2 == True:
-        if (68) <= ball_x < (98) and 62 <= ball_y <= 76:
-            i = brick_x.index(68)
-            brick_x.pop(i)
-            brick_y.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed
-            score = score + 15
-            brick2 = False
-    elif brick3 == True:
-        if (98) <= ball_x < (128) and 62 <= ball_y <= 76:
-            i = brick_x.index(98)
-            brick_x.pop(i)
-            brick_y.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 15
-            brick3 = False
-    elif brick4 == True:
-        if (128) <= ball_x < (158) and 62 <= ball_y <= 76:
-            i = brick_x.index(128)
-            brick_x.pop(i)
-            brick_y.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 15
-            brick4 = False
-    elif brick5 == True:
-        if (158) <= ball_x < (188) and 62 <= ball_y <= 76:
-            i = brick_x.index(158)
-            brick_x.pop(i)
-            brick_y.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 15
-            brick5 = False
-    elif brick6 == True:
-        if (188) <= ball_x <= (218) and 62 <= ball_y <= 76:
-            i = brick_x.index(188)
-            brick_x.pop(i)
-            brick_y.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 15
-            brick6 = False
-    elif brick7 == True:
-        if (38) <= ball_x < (68) and 90 <= ball_y <= 104:
-            i = brick_x2.index(38)
-            brick_x2.pop(i)
-            brick_y2.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 10
-            brick7 = False
-    elif brick8 == True:
-        if (68) <= ball_x < (98) and 90 <= ball_y <= 104:
-            i = brick_x2.index(68)
-            brick_x2.pop(i)
-            brick_y2.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 10
-            brick8 = False
-    elif brick9 == True:
-        if (98) <= ball_x < (128) and 90 <= ball_y <= 104:
-            i = brick_x2.index(98)
-            brick_x2.pop(i)
-            brick_y2.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 10
-            brick9 = False
-    elif brick10 == True:
-        if (128) <= ball_x < (158) and 90 <= ball_y <= 104:
-            i = brick_x2.index(128)
-            brick_x2.pop(i)
-            brick_y2.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 10
-            brick10 = False
-    elif brick11 == True:
-        if 158 <= ball_x < 188 and 90 <= ball_y <= 104:
-            i = brick_x2.index(158)
-            brick_x2.pop(i)
-            brick_y2.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 10
-            brick11 == False
-    elif brick12 == True:
-        if (188) <= ball_x <= 218 and 90 <= ball_y <= 104:
-            i = brick_x2.index(188)
-            brick_x2.pop(i)
-            brick_y2.pop(i)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 10
-            brick12 = False
+    if (38) <= ball_x < (68) and 62 <= ball_y <= 76:       
+        i = brick_x.index(38)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 15
+    elif (68) <= ball_x < (98) and 62 <= ball_y <= 76:
+        i = brick_x.index(68)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed
+        score = score + 15
+    elif (98) <= ball_x < (128) and 62 <= ball_y <= 76:
+        i = brick_x.index(98)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 15
+    elif (128) <= ball_x < (158) and 62 <= ball_y <= 76:
+        i = brick_x.index(128)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 15
+    elif (158) <= ball_x < (188) and 62 <= ball_y <= 76:
+        i = brick_x.index(158)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 15
+    elif (188) <= ball_x <= (218) and 62 <= ball_y <= 76:
+        i = brick_x.index(188)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 15
+    elif (38) <= ball_x < (68) and 90 <= ball_y <= 104:
+        i = brick_x2.index(38)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
+    elif (68) <= ball_x < (98) and 90 <= ball_y <= 104:
+        i = brick_x2.index(68)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
+    elif (98) <= ball_x < (128) and 90 <= ball_y <= 104:
+        i = brick_x2.index(98)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
+    elif (128) <= ball_x < (158) and 90 <= ball_y <= 104:
+        i = brick_x2.index(128)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
+    elif 158 <= ball_x < 188 and 90 <= ball_y <= 104:
+        i = brick_x2.index(158)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
+    elif (188) <= ball_x <= 218 and 90 <= ball_y <= 104:
+        i = brick_x2.index(188)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
         
            
     return ball_x, ball_y
