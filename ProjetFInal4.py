@@ -167,7 +167,7 @@ def life(game, vie):
 
 def victory(win):
     global score
-    if score == 130:
+    if score >= 130:
         win = True
     return win
         
