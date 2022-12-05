@@ -62,19 +62,6 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed*1.015
             yball_speed = -yball_speed*1.015
-      
-      
-    #if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
-     #   xball_speed = xball_speed
-      #  yball_speed = -yball_speed
-    #if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
-     #   xball_speed = xball_speed
-      #  yball_speed = -yball_speed
-    #if brick_y[0] <= ball_y <= (brick_y[11]+14):
-     #   for l in range (12):
-      #      if brick_x[l -1] <= x <= (brick_x[l-1]+30):
-       #         xball_speed = xball_speed 
-        #        yball_speed = -yball_speed    
     else:
         xball_speed = xball_speed
         yball_speed = yball_speed
@@ -167,11 +154,6 @@ def ballxbrick(ball_x, ball_y):
         xball_speed = xball_speed
         yball_speed = -yball_speed
         score = score + 10
-    #if 68 <= ball_x < 98 and 62 <= ball_y, 76:
-     #   i = brick_x.index(38)
-      #  brick_x.pop(i)
-       # brick_y.pop(i)
-        #score = score + 15
         
            
     return ball_x, ball_y
@@ -209,13 +191,10 @@ def update():
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
         ball_x, ball_y = ballxbrick(ball_x, ball_y)
-    
-   
-    #if game == False:
-     #   ball_x, ball_y = 128, 210
-    #if pyxel.btnr(pyxel.KEY_SPACE):
-     #   game = True
-    
+    if score <= 70:
+        xball_speed = xball_speed*1.75
+        yball_speed = yball_speed*1.75
+       
     
 # =========================================================
 # == DRAW
@@ -255,13 +234,5 @@ def draw():
         pyxel.text(110, 128, "Victory", 7)
    
     
-    #for by in range(4):
-        #for i in range(0, 7):
-         #   pyxel.rectb(brick_x[i - 1], brick_y[by -1], 30, 14, 10+by)
-          #  """pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
-           # pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
-            #pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
-            #pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
-            #pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)"""
-    
+
 pyxel.run(update, draw)
