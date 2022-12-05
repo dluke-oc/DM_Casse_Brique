@@ -23,6 +23,7 @@ brick_x = [38, 68, 98, 128, 158, 188]
 brick_y = [62, 62, 62, 62, 62, 62]
 brick_x2 = [38, 68, 98, 128, 158, 188]
 brick_y2 = [90, 90, 90, 90, 90, 90]
+totbrick = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 exleft = 38
 exright = 218
 textop = 62
@@ -176,13 +177,15 @@ def ballxbrick(ball_x, ball_y):
         brick_y2.pop(i)
         xball_speed = xball_speed
         yball_speed = -yball_speed
-        score = score + 10  
-        break
+        score = score + 10
+        if len(totbrick) == len(totbrick - 1):
+            break
     #if 68 <= ball_x < 98 and 62 <= ball_y, 76:
      #   i = brick_x.index(38)
       #  brick_x.pop(i)
        # brick_y.pop(i)
         #score = score + 15
+        
            
     return ball_x, ball_y
 
