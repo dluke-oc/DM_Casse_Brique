@@ -212,7 +212,7 @@ def draw():
 
     pyxel.text(20, 20, "score : %s " % str(score), 7)  
     pyxel.text(200, 225, "vie : %s " % str(vie), 7)
-    pyxel.circ(ball_x,ball_y, 5, 4)
+    pyxel.circ(int(ball_x),int(ball_y), 5, 4)
     for i in range(0, len(brick_x)):
         b = brick_x[i]
         c = brick_y[i]
