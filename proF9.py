@@ -119,7 +119,7 @@ def ballxbrick(x, y):
             score = score + 15
             b4 = b4 + 1
     elif b5 == 1:
-        elif (158) <= x < (188) and 62 <= y <= 76:       
+        if (158) <= x < (188) and 62 <= y <= 76:       
             i = brick_x.index(158)
             brick_x.pop(i)
             brick_y.pop(i)
