@@ -84,8 +84,6 @@ def ballxbrick(x, y):
     global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12
     if (38) <= x < (68) and 62 <= y <= 76:     
         if b1 == 1:
-            break
-        else:
             i = brick_x.index(38)
             brick_x.pop(i)
             brick_y.pop(i)
@@ -95,7 +93,6 @@ def ballxbrick(x, y):
             b1 = b1 + 1
     elif (68) <= x < (98) and 62 <= y <= 76:
         if b2 == 1:
-            break
             i = brick_x.index(68)
             brick_x.pop(i)
             brick_y.pop(i)
