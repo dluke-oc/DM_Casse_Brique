@@ -19,10 +19,13 @@ win = False
 
 xball_speed = 5
 yball_speed = 3
+
 brick_x = [38, 68, 98, 128, 158, 188] 
 brick_y = [62, 62, 62, 62, 62, 62]
 brick_x2 = [38, 68, 98, 128, 158, 188]
 brick_y2 = [90, 90, 90, 90, 90, 90]
+totbrick = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
 exleft = 38
 exright = 218
 textop = 62
@@ -42,7 +45,7 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def ball_movement(x, y):
-    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y
+    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2, score
     x -= xball_speed
     y -= yball_speed
     if (x < 5) or (x > 246):
@@ -61,46 +64,95 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed*1.015
             yball_speed = -yball_speed*1.015
-      
-      
-    #if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
-     #   xball_speed = xball_speed
-      #  yball_speed = -yball_speed
-    #if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
-     #   xball_speed = xball_speed
-      #  yball_speed = -yball_speed
-    #if brick_y[0] <= ball_y <= (brick_y[11]+14):
-     #   for l in range (12):
-      #      if brick_x[l -1] <= x <= (brick_x[l-1]+30):
-       #         xball_speed = xball_speed 
-        #        yball_speed = -yball_speed    
     else:
         xball_speed = xball_speed
         yball_speed = yball_speed
-    
+    if (38) <= ball_x < (68) and 62 <= ball_y <= 76:       
+        i = brick_x.index(38)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 15
+    elif (68) <= ball_x < (98) and 62 <= ball_y <= 76:
+        i = brick_x.index(68)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed
+        score = score + 15
+    elif (98) <= ball_x < (128) and 62 <= ball_y <= 76:
+        i = brick_x.index(98)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 15
+    elif (128) <= ball_x < (158) and 62 <= ball_y <= 76:
+        i = brick_x.index(128)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 15
+    elif (158) <= ball_x < (188) and 62 <= ball_y <= 76:
+        i = brick_x.index(158)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 15
+    elif (188) <= ball_x <= (218) and 62 <= ball_y <= 76:
+        i = brick_x.index(188)
+        brick_x.pop(i)
+        brick_y.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 15
+    elif (38) <= ball_x < (68) and 90 <= ball_y <= 104:
+        i = brick_x2.index(38)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
+    elif (68) <= ball_x < (98) and 90 <= ball_y <= 104:
+        i = brick_x2.index(68)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
+    elif (98) <= ball_x < (128) and 90 <= ball_y <= 104:
+        i = brick_x2.index(98)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
+    elif (128) <= ball_x < (158) and 90 <= ball_y <= 104:
+        i = brick_x2.index(128)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
+    elif 158 <= ball_x < 188 and 90 <= ball_y <= 104:
+        i = brick_x2.index(158)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
+    elif (188) <= ball_x <= 218 and 90 <= ball_y <= 104:
+        i = brick_x2.index(188)
+        brick_x2.pop(i)
+        brick_y2.pop(i)
+        xball_speed = xball_speed*1.050
+        yball_speed = -yball_speed*1.050
+        score = score + 10
     return x, y
 
-def ballxbrick(ball_x, ball_y):
-    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score
-    for h in range(0, len(brick_x)):
-        if brick_x[h-1] <= ball_x and ball_x <= (brick_x[h-1] + 30) and textop <= ball_y <= texbtom: #rebond contre brique nivsup
-            brick_x.pop(h - 1)
-            brick_y.pop(h - 1)
-            xball_speed = xball_speed
-            yball_speed = -yball_speed  
-            score = score + 10
-            break
-    for i in range(0, len(brick_x2)):
-        if brick_x2[i-1] <= ball_x and ball_x <= (brick_x2[i-1] + 30) and bextop <= ball_y <= bexbtom: #rebond contre brique  nivinf
-            brick_x2.pop(i - 1)
-            brick_y2.pop(i - 1)
-            ball_speed = xball_speed
-            yball_speed = -yball_speed
-            score = score + 15
-            break
-     
-           
-    return ball_x, ball_y
 
 def life(game, vie):
     global ball_y
@@ -110,8 +162,8 @@ def life(game, vie):
     return game, vie
 
 def victory(win):
-    global brick_x, brick_y, brick_x2, brick_y2
-    if len(brick_x) == 0 and len(brick_y) == 0 and len(brick_x2) == 0 and len(brick_y2) == 0:
+    global score
+    if score >= 150:
         win = True
     return win
         
@@ -134,14 +186,7 @@ def update():
         game= True
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
-        ball_x, ball_y = ballxbrick(ball_x, ball_y)
-    
-   
-    #if game == False:
-     #   ball_x, ball_y = 128, 210
-    #if pyxel.btnr(pyxel.KEY_SPACE):
-     #   game = True
-    
+       
     
 # =========================================================
 # == DRAW
@@ -163,11 +208,11 @@ def draw():
     pyxel.text(20, 20, "score : %s " % str(score), 7)  
     pyxel.text(200, 225, "vie : %s " % str(vie), 7)
     pyxel.circ(ball_x,ball_y, 5, 4)
-    for i in range(0, 6):
+    for i in range(0, len(brick_x)):
         b = brick_x[i - 1]
         c = brick_y[i - 1]
         pyxel.rectb(b, c, 30, 14, 10)
-    for i in range(0, 6):
+    for i in range(0, len(brick_x)):
         d = brick_x2[i - 1]
         e = brick_y2[i - 1]
         pyxel.rectb(d, e, 30, 14, 11)
@@ -181,13 +226,5 @@ def draw():
         pyxel.text(110, 128, "Victory", 7)
    
     
-    #for by in range(4):
-        #for i in range(0, 7):
-         #   pyxel.rectb(brick_x[i - 1], brick_y[by -1], 30, 14, 10+by)
-          #  """pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
-           # pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
-            #pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
-            #pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)
-            #pyxel.rectb(brick_x[i - 1], (24+(i*7))*2, 15*2, (brick_x[i] - [brick_x[i - 1]), 10+i)"""
-    
+
 pyxel.run(update, draw)
