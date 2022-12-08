@@ -91,7 +91,7 @@ def ballxbrick(x, y):
             yball_speed = -yball_speed*1.050
             score = score + 15
             b1 = b1 + 1
-     elif b2 == 1:
+    elif b2 == 1:
         if (68) <= x < (98) and 62 <= y <= 76:       
             i = brick_x.index(68)
             brick_x.pop(i)
@@ -100,7 +100,7 @@ def ballxbrick(x, y):
             yball_speed = -yball_speed
             score = score + 15
             b2 = b2 + 1
-     elif b3 == 1:
+    elif b3 == 1:
         if (98) <= x < (128) and 62 <= y <= 76:       
             i = brick_x.index(98)
             brick_x.pop(i)
