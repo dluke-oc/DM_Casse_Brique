@@ -64,9 +64,6 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed*1.015
             yball_speed = -yball_speed*1.015
-    else:
-        xball_speed = xball_speed
-        yball_speed = yball_speed
     
     return x, y
 
@@ -158,7 +155,7 @@ def ballxbrick(ball_x, ball_y):
         score = score + 10
         
            
-    return ball_x, ball_y
+    return 
 
 def life(game, vie):
     global ball_y
@@ -192,7 +189,7 @@ def update():
         game= True
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
-        ball_x, ball_y = ballxbrick(ball_x, ball_y)
+        ballxbrick(ball_x, ball_y)
        
     
 # =========================================================
@@ -200,6 +197,7 @@ def update():
 # =========================================================
 def draw():
     """création des objets (30 fois par seconde)"""
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed, score, vie, game, win
 
     # vide la fenetre
     pyxel.cls(0)
@@ -216,12 +214,12 @@ def draw():
     pyxel.text(200, 225, "vie : %s " % str(vie), 7)
     pyxel.circ(ball_x,ball_y, 5, 4)
     for i in range(0, len(brick_x)):
-        b = brick_x[i - 1]
-        c = brick_y[i - 1]
+        b = brick_x[i]
+        c = brick_y[i]
         pyxel.rectb(b, c, 30, 14, 10)
     for i in range(0, len(brick_x)):
-        d = brick_x2[i - 1]
-        e = brick_y2[i - 1]
+        d = brick_x2[i]
+        e = brick_y2[i]
         pyxel.rectb(d, e, 30, 14, 11)
     
     if vie == 0:
