@@ -73,8 +73,8 @@ def ballxbrick():
                     brick_corx.pop(i)
                     brick_cory.pop(i)
                     totbrick.pop(a)          
-                    xball_speed = xball_speed*1.052
-                    yball_speed = -yball_speed*1.052
+                    xball_speed = xball_speed*1.1
+                    yball_speed = -yball_speed*1.1
                     score = score + 15         
                 if brick_col[i] == 11:
                     brick_corx.pop(i)
