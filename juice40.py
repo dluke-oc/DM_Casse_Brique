@@ -120,6 +120,7 @@ def update():
         ball_x, ball_y = 128, 200
     if pyxel.btnr(pyxel.KEY_SPACE):
         game = True
+        rule = False
     if game == True:
         ball_x, ball_y = ball_movement(int(ball_x), int(ball_y))
         ballxbrick()
@@ -148,6 +149,8 @@ def draw():
     for i in range(0, len(totbrick)):
         pyxel.rectb(brick_corx[i], brick_cory[i], 30, 14, brick_col[i])
         
+    if rule == True:
+        pyxel.text(38, 200, "C'est dans votre interet de ne pas toucher les briques Jaunes!", 10)
     if vie == 0:
         pyxel.cls(0)
         pyxel.text(110, 128, "Game Over", 7)
