@@ -30,13 +30,6 @@ brick_cory = [34, 34, 34, 34, 34, 34, 62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90
 brick_col = [10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12]
 a = 0
 
-exleft = 38
-exright = 218
-textop = 62
-texbtom = 76
-bextop = 90
-bexbtom = 118
-
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
@@ -49,7 +42,7 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def ball_movement(x, y):
-    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y
+    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y
     x -= xball_speed
     y -= yball_speed
     if (x < 5) or (x > 246):
@@ -66,13 +59,13 @@ def ball_movement(x, y):
             yball_speed = -yball_speed*1.01
         elif vaisseau_x <= x <= (vaisseau_x +32):
             ball_y = ball_y + 5
-            xball_speed = xball_speed*1.01
-            yball_speed = -yball_speed*1.01
+            xball_speed = xball_speed*1.02
+            yball_speed = -yball_speed*1.02
     
     return x, y
 
 def ballxbrick():
-    global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, score, totbrick, a, brick_col
+    global brick_corx, brick_cory, xball_speed, yball_speed, score, totbrick, a, brick_col
     if len(totbrick) > 0:
         for i in range(0, len(totbrick)):
             if brick_corx[i] <= ball_x <= (brick_corx[i] + 30) and brick_cory[i] <= ball_y <= (brick_cory[i] + 14):
@@ -116,7 +109,7 @@ def victory(win):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory, brick_col
+    global vaisseau_x, vaisseau_y, ball_x, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory, brick_col
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     game, vie = life(game, vie)
