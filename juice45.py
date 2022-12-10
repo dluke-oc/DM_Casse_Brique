@@ -118,7 +118,7 @@ def update():
     game, vie = life(game, vie)
     win = victory(win)
     if game == False:
-        ball_x, ball_y = vaisseau_x, vaisseau_y
+        ball_x, ball_y = (vaisseau_x + 18), (vaisseau_y + 8)
     if pyxel.btnr(pyxel.KEY_SPACE):
         game = True
         rule = False
