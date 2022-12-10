@@ -25,7 +25,8 @@ brick_y = [62, 62, 62, 62, 62, 62]
 brick_x2 = [38, 68, 98, 128, 158, 188]
 brick_y2 = [90, 90, 90, 90, 90, 90]
 totbrick = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-
+brick_corx = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188]
+brick_cory = [62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90]
 b1 = 1
 b2 = 1
 b3 = 1
@@ -97,7 +98,7 @@ def ballxbrick():
                 brick_y2.pop(j)
                 xball_speed = xball_speed*1.050
                 yball_speed = -yball_speed*1.050
-                score = score + 10        
+                score = score + 10   
            
     return 
 
@@ -122,7 +123,7 @@ def victory(win):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed, score, vie, game, win
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2, xball_speed, yball_speed, score, vie, game, win
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     game, vie = life(game, vie)
@@ -130,7 +131,7 @@ def update():
     if game == False:
         ball_x, ball_y = 128, 200
     if pyxel.btnr(pyxel.KEY_SPACE):
-        game= True
+        game = True
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
         ballxbrick()
@@ -141,7 +142,7 @@ def update():
 # =========================================================
 def draw():
     """création des objets (30 fois par seconde)"""
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, xball_speed, yball_speed, score, vie, game, win
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, brick_x2, brick_x2, xball_speed, yball_speed, score, vie, game, win
 
     # vide la fenetre
     pyxel.cls(0)
