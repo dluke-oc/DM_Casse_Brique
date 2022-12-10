@@ -62,8 +62,8 @@ def ball_movement(x, y):
     if  215 <= y <= (238):
         if (vaisseau_x -20) <= x < (vaisseau_x) or (vaisseau_x + 32) < x <= (vaisseau_x + 55):
             ball_y = ball_y + 5
-            xball_speed = -xball_speed*1.015
-            yball_speed = -yball_speed*1.015
+            xball_speed = -xball_speed*1.005
+            yball_speed = -yball_speed*1.005
         elif vaisseau_x <= x <= (vaisseau_x +32):
             ball_y = ball_y + 5
             xball_speed = xball_speed*1.015
@@ -75,24 +75,24 @@ def ballxbrick():
     global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, score, totbrick, a, brick_col
     if len(brick_corx) > 0:
         for i in range(0, len(brick_corx)):
-            if brick_corx[i] <= ball_x <= (brick_corx[i] + 30) and brick_cory[i] < ball_y < (brick_cory[i] + 14):
+            if brick_corx[i] <= ball_x <= (brick_corx[i] + 30) and brick_cory[i] <= ball_y <= (brick_cory[i] + 14):
                 if brick_col[i] == 10:
                     brick_corx.pop(i)
                     brick_cory.pop(i)
                     totbrick.pop(a)          
-                    xball_speed = xball_speed*1.050
-                    yball_speed = -yball_speed*1.050
-                    score = score + 10           
+                    xball_speed = xball_speed*1.030
+                    yball_speed = -yball_speed*1.030
+                    score = score + 15         
                 elif brick_col[i] == 11:
                     brick_col[i] = 10
                     xball_speed = xball_speed
                     yball_speed = -yball_speed
-                    score = score + 15
-                else:
+                    score = score + 10
+                elif brick_col[i] == 12:
                     brick_col[i] = 11
                     xball_speed = xball_speed
                     yball_speed = -yball_speed
-                    score = score + 15
+                    score = score + 5
     return 
 
 def life(game, vie):
