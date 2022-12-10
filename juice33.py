@@ -42,7 +42,7 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def ball_movement(x, y):
-    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y, totbrick
+    global xball_speed, yball_speed, vaisseau_x, vaisseau_y, ball_x, ball_y
     x -= xball_speed
     y -= yball_speed
     if (x < 5) or (x > 246):
@@ -61,16 +61,7 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed
             yball_speed = -yball_speed
-    if  215 <= y <= (238) and len(totbrick) < 3:
-        if (vaisseau_x -20) <= x < (vaisseau_x-2) or (vaisseau_x + 35) < x <= (vaisseau_x + 55):
-            ball_y = ball_y + 5
-            xball_speed = -xball_speed*1.015
-            yball_speed = -yball_speed*1.015
-        elif vaisseau_x <= x <= (vaisseau_x +32):
-            ball_y = ball_y + 5
-            xball_speed = xball_speed*1.015
-            yball_speed = -yball_speed*1.015
-    
+            
     return x, y
 
 def ballxbrick():
@@ -86,7 +77,8 @@ def ballxbrick():
                     yball_speed = -yball_speed*1.052
                     score = score + 15         
                 if brick_col[i] == 11:
-                    brick_col[i] = 10
+                    brick_corx.pop(i)
+                    brick_cory.pop(i)
                     xball_speed = xball_speed*1.02
                     yball_speed = -yball_speed*1.02
                     score = score + 10
