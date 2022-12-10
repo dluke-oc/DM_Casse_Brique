@@ -84,10 +84,10 @@ def ballxbrick():
                   yball_speed = -yball_speed*1.050
                   score = score + 10           
                 elif brick_col[i] == 11:
-                  brick_col[i] = 10
-                  xball_speed = xball_speed
-                  yball_speed = -yball_speed
-                  score = score + 15
+                    brick_col[i] = 10
+                    xball_speed = xball_speed
+                    yball_speed = -yball_speed
+                    score = score + 15
                 else:
                     brick_col[i] = 11
                     xball_speed = xball_speed
