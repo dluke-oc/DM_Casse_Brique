@@ -151,10 +151,7 @@ def draw():
        # pyxel.rectb(d, e, 30, 14, 11)
     
     for i in range(0, len(brick_corx)):
-        b = brick_corx[i]
-        c = brick_cory[i]
-        d = brick_col[i]
-        pyxel.rectb(b, c, 30, 14, d)
+        pyxel.rectb(brick_corx[i], brick_cory[i], 30, 14, brick_col[i])
     if vie == 0:
         pyxel.cls(0)
         pyxel.text(110, 128, "Game Over", 7)
