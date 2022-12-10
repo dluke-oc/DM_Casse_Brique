@@ -80,7 +80,7 @@ def ball_movement(x, y):
     
     return x, y
 
-def ballxbrick():
+def ballxbrick(x, y):
     global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score
     for s in range(0, (len(brick_x)-1)):
         if (8 + 30*s) <= x <= (38 + 30*s) and textop <= y <= texbtom:
@@ -131,7 +131,7 @@ def update():
         game= True
     if game == True:
         ball_x, ball_y = ball_movement(ball_x, ball_y)
-        ballxbrick(ball_x, ball_y)
+        ballxbrick()
        
     
 # =========================================================
