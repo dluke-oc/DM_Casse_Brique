@@ -81,21 +81,23 @@ def ball_movement(x, y):
     return x, y
 
 def ballxbrick():
-    global x, y, exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score
-    for s in range(0, (len(brick_x)-1)):
-        if (8 + 30*s) <= x <= (38 + 30*s) and textop <= y <= texbtom:
-            brick_x.pop(s)
-            brick_y.pop(s)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 15
-    for j in range(0, (len(brick_x2)-1)):
-        if (8 + 30*j) <= x <= (38 + 30*j) and bextop <= y <= bexbtom:
-            brick_x2.pop(j)
-            brick_y2.pop(j)
-            xball_speed = xball_speed*1.050
-            yball_speed = -yball_speed*1.050
-            score = score + 10        
+    global ball_x, ball_y, exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score
+    if len(brick_x) > 0:
+        for s in range(0, len(brick_x)):
+            if (8 + 30*s) <= ball_x <= (38 + 30*s) and textop <= ball_y <= texbtom:
+                brick_x.pop(s)
+                brick_y.pop(s)
+                xball_speed = xball_speed*1.050
+                yball_speed = -yball_speed*1.050
+                score = score + 15
+    if len(brick_x2) > 0:
+        for j in range(0, len(brick_x2)):
+            if (8 + 30*j) <= ball_x <= (38 + 30*j) and bextop <= ball_y <= bexbtom:
+                brick_x2.pop(j)
+                brick_y2.pop(j)
+                xball_speed = xball_speed*1.050
+                yball_speed = -yball_speed*1.050
+                score = score + 10        
            
     return 
 
