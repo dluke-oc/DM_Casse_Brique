@@ -73,8 +73,8 @@ def ball_movement(x, y):
 
 def ballxbrick():
     global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, score, totbrick, a, brick_col
-    if len(brick_corx) > 0:
-        for i in range(0, len(brick_corx)):
+    if len(totbrick) > 0:
+        for i in range(0, len(totbrick)):
             if brick_corx[i] <= ball_x <= (brick_corx[i] + 30) and brick_cory[i] <= ball_y <= (brick_cory[i] + 14):
                 if brick_col[i] == 10:
                     brick_corx.pop(i)
