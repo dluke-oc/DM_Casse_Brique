@@ -82,7 +82,7 @@ def ball_movement(x, y):
     return x, y
 
 def ballxbrick():
-    global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed
+    global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, score
     if len(brick_corx):
         for i in range(0, len(brick_corx)):
             if brick_corx[s] <= ball_x <= (brick_corx[s] + 30) and (textop <= ball_y <= texbtom or bextop <= y <= bexbtom):
@@ -90,8 +90,7 @@ def ballxbrick():
                 brick_cory.pop(i)
                 xball_speed = xball_speed*1.050
                 yball_speed = -yball_speed*1.050
-                score = score + 10
-           
+                score = score + 10           
     return 
 
 def life(game, vie):
@@ -115,7 +114,7 @@ def victory(win):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2, xball_speed, yball_speed, score, vie, game, win
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, brick_x2, brick_y2, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     game, vie = life(game, vie)
@@ -134,7 +133,7 @@ def update():
 # =========================================================
 def draw():
     """création des objets (30 fois par seconde)"""
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, brick_x2, brick_x2, xball_speed, yball_speed, score, vie, game, win
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, brick_x2, brick_x2, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory
 
     # vide la fenetre
     pyxel.cls(0)
