@@ -151,7 +151,7 @@ def draw():
         pyxel.rectb(brick_corx[i], brick_cory[i], 30, 14, brick_col[i])
         
     if rule == True:
-        pyxel.text(24, 200, "Essayer de garder les briques jaunes pout la fin!", 10)
+        pyxel.text(32, 160, "Essayer de garder les briques jaunes pout la fin!", 10)
     if vie == 0:
         pyxel.cls(0)
         pyxel.text(110, 128, "Game Over", 7)
