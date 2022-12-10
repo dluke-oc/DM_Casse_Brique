@@ -87,6 +87,7 @@ def ballxbrick():
                   brick_col[i] = 10
                   xball_speed = xball_speed*1.050
                   yball_speed = -yball_speed*1.050
+                  score = score + 15
     return 
 
 def life(game, vie):
