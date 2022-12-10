@@ -82,23 +82,15 @@ def ball_movement(x, y):
     return x, y
 
 def ballxbrick():
-    global ball_x, ball_y, exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score
-    if len(brick_x) > 0:
-        for s in range(-1, len(brick_x)):
-            if (8 + 30*(s-1)) <= ball_x <= (38 + 30*s) and textop <= ball_y <= texbtom:
-                brick_x.pop(s-1)
-                brick_y.pop(s-1)
+    global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed
+    if len(brick_corx):
+        for i in range(0, len(brick_corx)):
+            if brick_corx[s] <= ball_x <= (brick_corx[s] + 30) and (textop <= ball_y <= texbtom or bextop <= y <= bexbtom):
+                brick_corx.pop(i)
+                brick_cory.pop(i)
                 xball_speed = xball_speed*1.050
                 yball_speed = -yball_speed*1.050
-                score = score + 15
-    if len(brick_x2) > 0:
-        for j in range(-1, len(brick_x2)):
-            if (8 + 30*j) <= ball_x <= (38 + 30*j) and bextop <= ball_y <= bexbtom:
-                brick_x2.pop(j)
-                brick_y2.pop(j)
-                xball_speed = xball_speed*1.050
-                yball_speed = -yball_speed*1.050
-                score = score + 10   
+                score = score + 10
            
     return 
 
@@ -133,7 +125,7 @@ def update():
     if pyxel.btnr(pyxel.KEY_SPACE):
         game = True
     if game == True:
-        ball_x, ball_y = ball_movement(ball_x, ball_y)
+        ball_x, ball_y = ball_movement(int(ball_x), int(ball_y))
         ballxbrick()
        
     
