@@ -30,6 +30,13 @@ brick_cory = [34, 34, 34, 34, 34, 34, 62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90
 brick_col = [10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12]
 a = 0
 
+exleft = 38
+exright = 218
+textop = 62
+texbtom = 76
+bextop = 90
+bexbtom = 118
+
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
