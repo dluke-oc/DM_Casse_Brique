@@ -25,7 +25,7 @@ brick_y = [62, 62, 62, 62, 62, 62]
 brick_x2 = [38, 68, 98, 128, 158, 188]
 brick_y2 = [90, 90, 90, 90, 90, 90]
 totbrick = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-brick_corx = [38, 188, 38, 68, 158, 188, 38, 68, 98, 128, 158, 188]
+brick_corx = [98, 128, 38, 68, 158, 188, 38, 68, 98, 128, 158, 188]
 brick_cory = [34, 34, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90] #62 and 90 w/ ecart = 14
 brick_col = [10, 10, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12]
 a = 0
@@ -55,12 +55,12 @@ def ball_movement(x, y):
     if  215 <= y <= (238):
         if (vaisseau_x -20) <= x < (vaisseau_x-2) or (vaisseau_x + 35) < x <= (vaisseau_x + 55):
             ball_y = ball_y + 5
-            xball_speed = -xball_speed*1.01
-            yball_speed = -yball_speed*1.01
+            xball_speed = -xball_speed
+            yball_speed = -yball_speed
         elif vaisseau_x <= x <= (vaisseau_x +32):
             ball_y = ball_y + 5
-            xball_speed = xball_speed*1.02
-            yball_speed = -yball_speed*1.02
+            xball_speed = xball_speed
+            yball_speed = -yball_speed
     
     return x, y
 
@@ -78,13 +78,13 @@ def ballxbrick():
                     score = score + 15         
                 elif brick_col[i] == 11:
                     brick_col[i] = 10
-                    xball_speed = xball_speed
-                    yball_speed = -yball_speed
+                    xball_speed = xball_speed*1.02
+                    yball_speed = -yball_speed*1.02
                     score = score + 10
                 elif brick_col[i] == 12:
                     brick_col[i] = 11
-                    xball_speed = xball_speed
-                    yball_speed = -yball_speed
+                    xball_speed = xball_speed*1.01
+                    yball_speed = -yball_speed*1.01
                     score = score + 5
     return 
 
