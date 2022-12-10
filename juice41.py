@@ -16,6 +16,7 @@ score = 0
 vie = 3
 game = False
 win = False
+rule = True
 
 xball_speed = 5
 yball_speed = 3
@@ -111,7 +112,7 @@ def victory(win):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory, brick_col
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory, brick_col, rule
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     game, vie = life(game, vie)
@@ -131,7 +132,7 @@ def update():
 # =========================================================
 def draw():
     """création des objets (30 fois par seconde)"""
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory, brick_col, totbrick
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory, brick_col, totbrick, rule
 
     # vide la fenetre
     pyxel.cls(0)
