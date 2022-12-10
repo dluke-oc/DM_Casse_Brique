@@ -17,8 +17,8 @@ vie = 3
 game = False
 win = False
 
-xball_speed = 5.0
-yball_speed = 3.0
+xball_speed = 5
+yball_speed = 3
 
 brick_x = [38, 68, 98, 128, 158, 188] 
 brick_y = [62, 62, 62, 62, 62, 62]
@@ -80,7 +80,7 @@ def ball_movement(x, y):
     
     return x, y
 
-def ballxbrick(x, y):
+def ballxbrick():
     global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score
     for s in range(0, (len(brick_x)-1)):
         if (8 + 30*s) <= x <= (38 + 30*s) and textop <= y <= texbtom:
