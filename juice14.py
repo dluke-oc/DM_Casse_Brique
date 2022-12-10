@@ -62,12 +62,12 @@ def ball_movement(x, y):
     if  215 <= y <= (238):
         if (vaisseau_x -20) <= x < (vaisseau_x) or (vaisseau_x + 32) < x <= (vaisseau_x + 55):
             ball_y = ball_y + 5
-            xball_speed = -xball_speed*1.005
-            yball_speed = -yball_speed*1.005
+            xball_speed = -xball_speed*1.01
+            yball_speed = -yball_speed*1.01
         elif vaisseau_x <= x <= (vaisseau_x +32):
             ball_y = ball_y + 5
-            xball_speed = xball_speed*1.015
-            yball_speed = -yball_speed*1.015
+            xball_speed = xball_speed*1.01
+            yball_speed = -yball_speed*1.01
     
     return x, y
 
@@ -80,8 +80,8 @@ def ballxbrick():
                     brick_corx.pop(i)
                     brick_cory.pop(i)
                     totbrick.pop(a)          
-                    xball_speed = xball_speed*1.030
-                    yball_speed = -yball_speed*1.030
+                    xball_speed = xball_speed*1.045
+                    yball_speed = -yball_speed*1.045
                     score = score + 15         
                 elif brick_col[i] == 11:
                     brick_col[i] = 10
@@ -135,7 +135,7 @@ def update():
 # =========================================================
 def draw():
     """création des objets (30 fois par seconde)"""
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, brick_x2, brick_x2, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory, brick_col
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory, brick_col, totbrick
 
     # vide la fenetre
     pyxel.cls(0)
@@ -160,8 +160,9 @@ def draw():
       #  e = brick_y2[i]
        # pyxel.rectb(d, e, 30, 14, 11)
     
-    for i in range(0, len(brick_corx)):
+    for i in range(0, len(totbrick)):
         pyxel.rectb(brick_corx[i], brick_cory[i], 30, 14, brick_col[i])
+        
     if vie == 0:
         pyxel.cls(0)
         pyxel.text(110, 128, "Game Over", 7)
