@@ -61,7 +61,7 @@ def ball_movement(x, y):
             ball_y = ball_y + 5
             xball_speed = xball_speed
             yball_speed = -yball_speed
-    if  215 <= y <= (238) and len(totbrick) <= 3:
+    if  215 <= y <= (238) and len(totbrick) < 3:
         if (vaisseau_x -20) <= x < (vaisseau_x-2) or (vaisseau_x + 35) < x <= (vaisseau_x + 55):
             ball_y = ball_y + 5
             xball_speed = -xball_speed*1.015
