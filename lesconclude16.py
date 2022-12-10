@@ -28,18 +28,7 @@ totbrick = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 brick_corx = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188]
 brick_cory = [62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90]
 brick_col = [10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11]
-b1 = 1
-b2 = 1
-b3 = 1
-b4 = 1
-b5 = 1
-b6 = 1
-b7 = 1
-b8 = 1
-b9 = 1
-b10 = 1
-b11 = 1
-b12 = 1
+a = 0
 
 exleft = 38
 exright = 218
@@ -83,12 +72,14 @@ def ball_movement(x, y):
     return x, y
 
 def ballxbrick():
-    global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, score
+    global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, score, totbrick, a
     if len(brick_corx) > 0:
         for i in range(0, len(brick_corx)):
             if brick_corx[i] <= ball_x <= (brick_corx[i] + 30) and (textop <= ball_y <= texbtom or bextop <= y <= bexbtom):
                 brick_corx.pop(i)
                 brick_cory.pop(i)
+                totbrick.pop(a)
+                a = a + 1
                 xball_speed = xball_speed*1.050
                 yball_speed = -yball_speed*1.050
                 score = score + 10           
@@ -102,8 +93,8 @@ def life(game, vie):
     return game, vie
 
 def victory(win):
-    global score
-    if score >= 150:
+    global totbrick
+    if len(totbrick) == 0:
         win = True
     return win
         
