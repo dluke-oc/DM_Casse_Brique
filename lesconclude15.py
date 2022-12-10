@@ -27,6 +27,7 @@ brick_y2 = [90, 90, 90, 90, 90, 90]
 totbrick = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 brick_corx = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188]
 brick_cory = [62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90]
+brick_col = [10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11]
 b1 = 1
 b2 = 1
 b3 = 1
@@ -133,7 +134,7 @@ def update():
 # =========================================================
 def draw():
     """création des objets (30 fois par seconde)"""
-    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, brick_x2, brick_x2, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory
+    global vaisseau_x, vaisseau_y, ball_x, ball_y, brick_x, brick_y, brick_x2, brick_x2, xball_speed, yball_speed, score, vie, game, win, brick_corx, brick_cory, brick_col
 
     # vide la fenetre
     pyxel.cls(0)
@@ -149,15 +150,20 @@ def draw():
     pyxel.text(20, 20, "score : %s " % str(score), 7)  
     pyxel.text(200, 225, "vie : %s " % str(vie), 7)
     pyxel.circ(int(ball_x),int(ball_y), 5, 4)
-    for i in range(0, len(brick_x)):
-        b = brick_x[i]
-        c = brick_y[i]
-        pyxel.rectb(b, c, 30, 14, 10)
-    for i in range(0, len(brick_x)):
-        d = brick_x2[i]
-        e = brick_y2[i]
-        pyxel.rectb(d, e, 30, 14, 11)
+    #for i in range(0, len(brick_x)):
+     #   b = brick_x[i]
+      #  c = brick_y[i]
+      #  pyxel.rectb(b, c, 30, 14, 10)
+    #for i in range(0, len(brick_x)):
+     #   d = brick_x2[i]
+      #  e = brick_y2[i]
+       # pyxel.rectb(d, e, 30, 14, 11)
     
+    for i in range(0, len(brick_corx)):
+        b = brick_corx[i]
+        c = brick_cory[i]
+        d = brick_col[i]
+        pyxel.rectb(b, c, 30, 14, d)
     if vie == 0:
         pyxel.cls(0)
         pyxel.text(110, 128, "Game Over", 7)
