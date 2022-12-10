@@ -81,18 +81,18 @@ def ball_movement(x, y):
     return x, y
 
 def ballxbrick(x, y):
-    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12
+    global exright, exleft, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, brick_x, brick_y, brick_x2, brick_y2, score
     for s in range(0, (len(brick_x)-1)):
         if (8 + 30*s) <= x <= (38 + 30*s) and textop <= y <= texbtom:
-            brick_x.pop(i)
-            brick_y.pop(i)
+            brick_x.pop(s)
+            brick_y.pop(s)
             xball_speed = xball_speed*1.050
             yball_speed = -yball_speed*1.050
             score = score + 15
-    for s in range(0, (len(brick_x2)-1)):
-        if (8 + 30*s) <= x <= (38 + 30*s) and textop <= y <= texbtom:
-            brick_x2.pop(i)
-            brick_y2.pop(i)
+    for j in range(0, (len(brick_x2)-1)):
+        if (8 + 30*j) <= x <= (38 + 30*j) and bextop <= y <= bexbtom:
+            brick_x2.pop(j)
+            brick_y2.pop(j)
             xball_speed = xball_speed*1.050
             yball_speed = -yball_speed*1.050
             score = score + 10        
