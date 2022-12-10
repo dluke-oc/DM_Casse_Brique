@@ -25,9 +25,9 @@ brick_y = [62, 62, 62, 62, 62, 62]
 brick_x2 = [38, 68, 98, 128, 158, 188]
 brick_y2 = [90, 90, 90, 90, 90, 90]
 totbrick = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-brick_corx = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188]
-brick_cory = [62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90]
-brick_col = [10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11]
+brick_corx = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188]
+brick_cory = [62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90, 34, 34, 34, 34, 34, 34]
+brick_col = [10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12]
 a = 0
 
 exleft = 38
@@ -83,11 +83,16 @@ def ballxbrick():
                   xball_speed = xball_speed*1.050
                   yball_speed = -yball_speed*1.050
                   score = score + 10           
-                else:
+                elif brick_col[i] == 11:
                   brick_col[i] = 10
                   xball_speed = xball_speed*1.050
                   yball_speed = -yball_speed*1.050
                   score = score + 15
+                else:
+                    brick_col[i] = 11
+                    xball_speed = xball_speed
+                    yball_speed = -yball_speed
+                    score = score + 15
     return 
 
 def life(game, vie):
