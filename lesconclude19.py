@@ -75,7 +75,7 @@ def ballxbrick():
     global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, score, totbrick, a
     if len(brick_corx) > 0:
         for i in range(0, len(brick_corx)):
-            if brick_corx[i] <= ball_x <= (brick_corx[i] + 30) and (textop <= ball_y <= texbtom or bextop <= y <= bexbtom):
+            if brick_corx[i] <= ball_x <= (brick_corx[i] + 30) and brick_cory[i] <= ball_y <= (brick_cory[i] + 14):
                 brick_corx.pop(i)
                 brick_cory.pop(i)
                 totbrick.pop(a)
