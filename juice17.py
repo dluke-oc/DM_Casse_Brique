@@ -144,21 +144,11 @@ def draw():
     pyxel.rect(vaisseau_x, vaisseau_y, 32, 14, 8)
     pyxel.tri(vaisseau_x, vaisseau_y, vaisseau_x, vaisseau_y+15, vaisseau_x-15, vaisseau_y+15, 8)
     pyxel.tri(vaisseau_x+32, vaisseau_y, vaisseau_x+32, vaisseau_y+15, vaisseau_x+47, vaisseau_y+15, 8)
-    """
-    pyxel.rect(vaisseau_x-15, vaisseau_y+15, 63, 4, 8)
-    """
 
     pyxel.text(20, 20, "score : %s " % str(score), 7)  
     pyxel.text(200, 225, "vie : %s " % str(vie), 7)
     pyxel.circ(int(ball_x),int(ball_y), 5, 4)
-    #for i in range(0, len(brick_x)):
-     #   b = brick_x[i]
-      #  c = brick_y[i]
-      #  pyxel.rectb(b, c, 30, 14, 10)
-    #for i in range(0, len(brick_x)):
-     #   d = brick_x2[i]
-      #  e = brick_y2[i]
-       # pyxel.rectb(d, e, 30, 14, 11)
+
     
     for i in range(0, len(totbrick)):
         pyxel.rectb(brick_corx[i], brick_cory[i], 30, 14, brick_col[i])
