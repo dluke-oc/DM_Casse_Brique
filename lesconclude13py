@@ -85,7 +85,7 @@ def ballxbrick():
     global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, score
     if len(brick_corx) > 0:
         for i in range(0, len(brick_corx)):
-            if brick_corx[s] <= ball_x <= (brick_corx[s] + 30) and (textop <= ball_y <= texbtom or bextop <= y <= bexbtom):
+            if brick_corx[i] <= ball_x <= (brick_corx[i] + 30) and (textop <= ball_y <= texbtom or bextop <= y <= bexbtom):
                 brick_corx.pop(i)
                 brick_cory.pop(i)
                 xball_speed = xball_speed*1.050
