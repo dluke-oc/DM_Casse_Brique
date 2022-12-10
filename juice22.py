@@ -48,9 +48,8 @@ def ball_movement(x, y):
     if (x < 5) or (x > 246):
         xball_speed = -xball_speed
         yball_speed = yball_speed
-    elif (y < 5):
+    elif (y < 10):
         xball_speed = xball_speed
-        ball_y = ball_y - 5
         yball_speed = -yball_speed
     if  215 <= y <= (238):
         if (vaisseau_x -20) <= x < (vaisseau_x-2) or (vaisseau_x + 35) < x <= (vaisseau_x + 55):
