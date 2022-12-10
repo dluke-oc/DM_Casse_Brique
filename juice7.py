@@ -77,12 +77,12 @@ def ballxbrick():
         for i in range(0, len(brick_corx)):
             if brick_corx[i] <= ball_x <= (brick_corx[i] + 30) and brick_cory[i] <= ball_y <= (brick_cory[i] + 14):
                 if brick_col[i] == 10:
-                  brick_corx.pop(i)
-                  brick_cory.pop(i)
-                  totbrick.pop(a)          
-                  xball_speed = xball_speed*1.050
-                  yball_speed = -yball_speed*1.050
-                  score = score + 10           
+                    brick_corx.pop(i)
+                    brick_cory.pop(i)
+                    totbrick.pop(a)          
+                    xball_speed = xball_speed*1.050
+                    yball_speed = -yball_speed*1.050
+                    score = score + 10           
                 elif brick_col[i] == 11:
                     brick_col[i] = 10
                     xball_speed = xball_speed
