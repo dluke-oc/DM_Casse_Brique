@@ -26,7 +26,7 @@ brick_x2 = [38, 68, 98, 128, 158, 188]
 brick_y2 = [90, 90, 90, 90, 90, 90]
 totbrick = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 brick_corx = [38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188, 38, 68, 98, 128, 158, 188]
-brick_cory = [34, 34, 34, 34, 34, 34, 48, 48, 48, 48, 48, 48, 62, 62, 62, 62, 62, 62] #62 and 90 w/ ecart = 14
+brick_cory = [34, 34, 34, 34, 34, 34, 62, 62, 62, 62, 62, 62, 90, 90, 90, 90, 90, 90] #62 and 90 w/ ecart = 14
 brick_col = [10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12]
 a = 0
 
@@ -72,7 +72,7 @@ def ball_movement(x, y):
     return x, y
 
 def ballxbrick():
-    global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, score, totbrick, a
+    global brick_corx, brick_cory, textop, texbtom, bextop, bexbtom, xball_speed, yball_speed, score, totbrick, a, brick_col
     if len(brick_corx) > 0:
         for i in range(0, len(brick_corx)):
             if brick_corx[i] <= ball_x <= (brick_corx[i] + 30) and brick_cory[i] < ball_y < (brick_cory[i] + 14):
