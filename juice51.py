@@ -123,6 +123,8 @@ def update():
         game = True
         rule = False
     if game == True:
+        xball_speed = abs(xball_speed)
+        yball_speed = -abs(yball_speed)
         ball_x, ball_y = ball_movement(int(ball_x), int(ball_y))
         ballxbrick()
        
@@ -151,7 +153,7 @@ def draw():
         pyxel.rectb(brick_corx[i], brick_cory[i], 30, 14, brick_col[i])
         
     if rule == True:
-        pyxel.text(7, 150, "Les briques jaunes font accelerer la balle et contamine les autres!", 10)
+        pyxel.text(2, 150, "Les briques jaunes font accelerer la balle et contamine les autres!", 10)
         pyxel.text(60, 180, "Essayer de les garder pour la fin", 10)
     if vie == 0:
         pyxel.cls(0)
