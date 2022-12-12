@@ -119,12 +119,12 @@ def update():
     win = victory(win)
     if game == False:
         ball_x, ball_y = 128, 160
+        xball_speed = abs(xball_speed)
+        yball_speed = -abs(yball_speed)
     if pyxel.btnr(pyxel.KEY_SPACE):
         game = True
         rule = False
     if game == True:
-        xball_speed = abs(xball_speed)
-        yball_speed = -abs(yball_speed)
         ball_x, ball_y = ball_movement(int(ball_x), int(ball_y))
         ballxbrick()
        
