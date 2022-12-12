@@ -118,9 +118,7 @@ def update():
     game, vie = life(game, vie)
     win = victory(win)
     if game == False:
-        ball_x, ball_y = 128, 160
-        xball_speed = abs(xball_speed)
-        yball_speed = -abs(yball_speed)
+        ball_x, ball_y = 128, 128
     if pyxel.btnr(pyxel.KEY_SPACE):
         game = True
         rule = False
@@ -153,7 +151,7 @@ def draw():
         pyxel.rectb(brick_corx[i], brick_cory[i], 30, 14, brick_col[i])
         
     if rule == True:
-        pyxel.text(2, 150, "Les briques jaunes font accelerer la balle et contamine les autres!", 10)
+        pyxel.text(0, 150, "Les briques jaunes accelerent la balle + contaminent les autres!", 10)
         pyxel.text(60, 180, "Essayer de les garder pour la fin", 10)
     if vie == 0:
         pyxel.cls(0)
